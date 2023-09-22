@@ -28,10 +28,26 @@
         "label": "coverimage"
       }
     },
+    "wireframe1": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "coverimage"
+      }
+    },
     "date": {
       "type": "Date",
       "config": {
         "label": "date"
+      }
+    },
+    "wireframes": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "wireframes"
       }
     },
     "projectDate": {

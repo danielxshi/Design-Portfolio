@@ -1,16 +1,15 @@
 export default function contact() {
   return (
     <>
-      <h4>Contact Label</h4>
-      <ul>
+      <ul className="sm:flex sm:mt-5 about-contact-container">
         <li>
-          <a href="">Github</a>
+          <a href="">My CV</a>
         </li>
         <li>
-          <a href="">LinkedIN</a>
+          <a href="">@danielxshi</a>
         </li>
         <li>
-          <a href="">Email</a>
+          <a href="">danielxshi@hotmail.com</a>
         </li>
       </ul>
     </>

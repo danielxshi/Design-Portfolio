@@ -8,8 +8,8 @@ export default function RichTextAsset({ id, assets }) {
     return (
       <ContentfulImage
         src={asset.url}
-        width={500}
-        height={500}
+        width={1080}
+        height={1080}
         alt={asset.description}
       />
     );
