@@ -2,23 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* BASE - Base Variable file along with starting point Mixins.
+========================================================================== */
+@import "_variables.scss";
+
+/* FRAMEWORK - Structure and layout files.
+========================================================================== */
+
+/* MODULES - Re-usable site elements.
+========================================================================== */
+@import "_footer.scss";
+
+/* FONTS
+========================================================================== */
+@import "_type.scss";
+@import url("https://use.typekit.net/ocd1tda.css");
+
 * {
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
 }
 
-:root {
-  --select-color: #9feedc;
-  --select-bg: #0e1010;
-}
-
-
 html,
 body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
-
 
 a {
   color: inherit;
@@ -28,7 +38,6 @@ a {
 * {
   box-sizing: border-box;
 }
-
 
 /* width */
 ::-webkit-scrollbar {
@@ -50,90 +59,227 @@ a {
   background: #555;
 }
 
-
-h1 {
-  color: #474747;
-  font-family: Kaisei Decol;
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  letter-spacing: -2.1px;
+.about-container {
+  //   min-width: fit-content;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+// mt-10 mb-10 mx-auto px-5
+.home-container {
+  margin: $sm-margin auto;
+  padding: 0 1rem;
 }
 
-p {
-  color: #474747;
-  font-family: Kaisei HarunoUmi;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 36px */
-  letter-spacing: -0.96px;
+.landing-container {
+  //   min-width: fit-content;
+  min-height: fit-content;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: space-between;
+  padding-bottom: 2 * $sm-margin;
 }
 
-em {
-  color: #474747;
-  font-family: Katibeh;
-  font-size: 4rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  letter-spacing: -2.1px;
+.intro-container {
+  .subhead {
+    margin-top: $xs-margin;
+  }
+  a {
+    color: #474747;
+    font-family: "brandon-grotesque", sans-serif;
+    font-style: light;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    letter-spacing: -0.8px;
+  }
+  div,
+  li {
+    margin-top: $sm-margin;
+  }
+  > :first-child {
+    margin-top: 0;
+  }
 }
 
-.overline {
-  color: #474747;
-  font-family: Kaisei HarunoUmi;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 36px */
-  letter-spacing: -0.96px;
+.about-container {
+  .about-biography {
+    width: 100%;
+    p:last-child {
+      margin-top: $xs-margin;
+    }
+  }
+  a {
+    margin-top: $xs-margin;
+  }
 }
 
-a {
-  color: #000;
-  font-family: Inter;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 36px */
-  letter-spacing: -1.2px;
-}
-
-.about-container
-{
-    min-width: fit-content;
-    min-height: fit-content;
-    margin-bottom: 2.5rem;
+.about-contact-container {
+  a {
+    white-space: nowrap;
+    font-weight: 300;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    margin-right: 1rem;
+  }
+  li:last-child {
+    margin-right: 0;
+  }
+  li {
+    display: none;
+  }
+  li:first-child {
     display: flex;
-    flex-direction: column;
-    width: 80%;
+  }
+  img {
+    height: 24px;
+    margin: auto;
+  }
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 8;
+  gap: 1rem;
+}
+
+.icon {
+  fill: #474747;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+}
+
+.more-stories {
+  margin-top: $lrg-margin;
+}
+
+.post-preview {
+  * {
+    margin-bottom: $sm-margin;
+  }
+  h3 {
+    color: var(--Text-Color, #474747);
+    font-family: Gestura Headline TRIAL;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.64px;
+  }
+}
+
+// ------=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=
 
 @media (min-width: 640px) {
-    .about-contact-container{
-        li {
-            margin-left: 1rem;
-        }
-        li:first-child{
-            margin-left: 0;
-        }
-    }
 }
 @media (min-width: 768px) {
- 
 }
 @media (min-width: 1024px) {
-    //font size
-  
+  //font size
 
-
-    //padding and margin
+  //padding and margin
 }
 @media (min-width: 1280px) {
+    .intro-container {
+        width: 1203px;
+      }
+      .landing-container {
+        min-width: fit-content;
+      }
+      .post-preview-container {
+        column-gap: 3rem;
+      }
+    
+      .home-container {
+        margin: $sm-margin auto;
+        padding: 0 $med-margin;
+      }
+      .home-container {
+        display: grid;
+        grid-template-columns: 8 1fr;
+        .landing-container {
+          margin: 0;
+        }
+      }
+      .more-stories {
+        img {
+          width: -webkit-fill-available;
+        }
+      }
+    
+      .about-container {
+        min-height: fit-content;
+        display: flex;
+        flex-direction: column;
+        width: 663px;
+      }
+    
+      .post-preview {
+        * {
+          margin-bottom: $sm-margin;
+        }
+        h3 {
+          color: var(--Text-Color, #474747);
+          font-family: Gestura Headline TRIAL;
+          font-size: 1.5rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 24px */
+          letter-spacing: -0.64px;
+        }
+      }
 }
 @media (min-width: 1536px) {
- 
+  .intro-container {
+    width: 1203px;
+  }
+  .landing-container {
+    min-width: fit-content;
+  }
+  .post-preview-container {
+    column-gap: 3rem;
+  }
+
+  .home-container {
+    margin: $sm-margin auto;
+    padding: 0 $med-margin;
+  }
+  .home-container {
+    display: grid;
+    grid-template-columns: 8 1fr;
+    .landing-container {
+      margin: 0;
+    }
+  }
+  .more-stories {
+    img {
+      width: -webkit-fill-available;
+    }
+  }
+
+  .about-container {
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 663px;
+  }
+
+  .post-preview {
+    * {
+      margin-bottom: $sm-margin;
+    }
+    h3 {
+      color: var(--Text-Color, #474747);
+      font-family: Gestura Headline TRIAL;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      letter-spacing: -0.64px;
+    }
+  }
 }

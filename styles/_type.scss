@@ -1,0 +1,146 @@
+@import url("https://use.typekit.net/ocd1tda.css");
+
+h1 {
+  color: #474747;
+  font-family: Gestura Display TRIAL;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  letter-spacing: -0.8px;
+}
+
+h4 {
+  color: var(--Text-Color, #474747);
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.56px;
+}
+
+.subhead {
+  color: #474747;
+  font-family: "brandon-grotesque", sans-serif;
+  font-style: thin;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.4rem;
+  letter-spacing: -0.8px;
+}
+
+.links {
+  color: var(--Text-Color, #474747);
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 330;
+  line-height: 125%; /* 20px */
+  letter-spacing: -0.48px;
+}
+
+p {
+  color: #474747;
+  font-family: "brandon-grotesque", sans-serif;
+  font-style: light;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  letter-spacing: -0.48px;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  color: #474747;
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.7px;
+}
+
+// ------=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=
+
+// @media (min-width: 640px) {
+// }
+// @media (min-width: 768px) {
+// }
+// @media (min-width: 1024px) {
+//   //font size
+
+//   //padding and margin
+// }
+
+@media (min-width: 1280px) {
+  h1 {
+    color: #474747;
+    font-size: 3rem;
+    font-family: Gestura Display TRIAL;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4.5rem;
+    letter-spacing: -2.1px;
+  }
+
+  .subhead {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+
+  a {
+    color: #000;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 36px */
+    letter-spacing: -1.2px;
+  }
+
+  .landing-container {
+    padding-bottom: 2*$sm-margin;
+  }
+}
+
+// Largest Media Query
+@media (min-width: 1536px) {
+  h1 {
+    color: #474747;
+    font-size: 3rem;
+    font-family: Gestura Display TRIAL;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4.5rem;
+    letter-spacing: -2.1px;
+  }
+
+  .subhead {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+
+  a {
+    color: #000;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 36px */
+    letter-spacing: -1.2px;
+  }
+
+  .landing-container {
+    padding-bottom: 2*$sm-margin;
+  }
+
+}

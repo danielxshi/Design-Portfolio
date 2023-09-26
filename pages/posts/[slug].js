@@ -57,6 +57,9 @@ export default function Post({ post, morePosts, preview }) {
             <ImageHolder title={post.title} url={post.wireframe8.url} />
             {/* <CoverImage title={title} url={coverImage.url} /> */}
             <SectionSeparator />
+            <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
+              More Stories
+            </h2>
             {morePosts && morePosts.length > 0 && (
               <MoreStories posts={morePosts} />
             )}

@@ -3,7 +3,15 @@ export default function contact() {
     <>
       <ul className="sm:flex sm:mt-5 about-contact-container">
         <li>
-          <a href="">My CV</a>
+          <a className="flex icon" href="">
+            <img
+              width="24"
+              height="24"
+              src="https://img.icons8.com/material-outlined/24/resume.png"
+              alt="resume"
+            />
+            CV
+          </a>
         </li>
         <li>
           <a href="">@danielxshi</a>

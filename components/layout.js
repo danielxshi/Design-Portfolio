@@ -1,4 +1,5 @@
 import Meta from "../components/meta";
+import Footer from "../components/footer";
 
 export default function Layout({ preview, children }) {
   return (
@@ -6,6 +7,7 @@ export default function Layout({ preview, children }) {
       <Meta />
       <div>
         <main>{children}</main>
+        <Footer/>
       </div>
     </>
   );
