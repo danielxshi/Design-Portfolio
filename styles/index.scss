@@ -8,6 +8,7 @@
 
 /* FRAMEWORK - Structure and layout files.
 ========================================================================== */
+@import "_grid.scss";
 
 /* MODULES - Re-usable site elements.
 ========================================================================== */
@@ -84,6 +85,10 @@ a {
 }
 
 .intro-container {
+  .intro-cv {
+    margin-top: $xs-margin;
+    display: flex;
+  }
   .subhead {
     margin-top: $xs-margin;
   }
@@ -106,14 +111,26 @@ a {
 }
 
 .about-container {
+  .cta-about {
+    margin-top: $sm-margin;
+    a {
+      margin: auto;
+      margin-right: 0;
+    }
+  }
   .about-biography {
     width: 100%;
     p:last-child {
-      margin-top: $xs-margin;
+      margin-top: $sm-margin;
     }
   }
-  a {
-    margin-top: $xs-margin;
+  div {
+    ul li {
+      margin-right: 1rem;
+    }
+    ul li:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -184,56 +201,59 @@ a {
   //padding and margin
 }
 @media (min-width: 1280px) {
-    .intro-container {
-        width: 1203px;
-      }
-      .landing-container {
-        min-width: fit-content;
-      }
-      .post-preview-container {
-        column-gap: 3rem;
-      }
-    
-      .home-container {
-        margin: $sm-margin auto;
-        padding: 0 $med-margin;
-      }
-      .home-container {
-        display: grid;
-        grid-template-columns: 8 1fr;
-        .landing-container {
-          margin: 0;
-        }
-      }
-      .more-stories {
-        img {
-          width: -webkit-fill-available;
-        }
-      }
-    
-      .about-container {
-        min-height: fit-content;
-        display: flex;
-        flex-direction: column;
-        width: 663px;
-      }
-    
-      .post-preview {
-        * {
-          margin-bottom: $sm-margin;
-        }
-        h3 {
-          color: var(--Text-Color, #474747);
-          font-family: Gestura Headline TRIAL;
-          font-size: 1.5rem;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 150%; /* 24px */
-          letter-spacing: -0.64px;
-        }
-      }
+  .intro-container {
+    width: 1203px;
+  }
+  .landing-container {
+    min-width: fit-content;
+  }
+  .post-preview-container {
+    column-gap: 3rem;
+  }
+
+  .home-container {
+    margin: $sm-margin auto;
+    padding: $container-padding;
+  }
+  .home-container {
+    display: grid;
+    .landing-container {
+      margin: 0;
+    }
+  }
+  .more-stories {
+    img {
+      width: -webkit-fill-available;
+    }
+  }
+
+  .about-container {
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 663px;
+  }
+
+  .post-preview {
+    * {
+      margin-bottom: $sm-margin;
+    }
+    h3 {
+      color: var(--Text-Color, #474747);
+      font-family: Gestura Headline TRIAL;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      letter-spacing: -0.64px;
+    }
+  }
 }
 @media (min-width: 1536px) {
+  .mobile-contact-card {
+    // display: none;
+    background-color: tomato;
+  }
   .intro-container {
     width: 1203px;
   }

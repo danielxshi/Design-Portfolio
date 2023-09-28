@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 .footer-container {
+  display: flex;
+  flex-wrap: wrap;
   .list-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -19,7 +21,8 @@
   ul h5 {
     margin-bottom: $sm-margin;
   }
-  a {
+  a,
+  p {
     color: #474747;
     font-family: "brandon-grotesque", sans-serif;
     font-style: light;
@@ -83,8 +86,17 @@
       grid-column-end: 3;
     }
 
+    .footer-feedback-container {
+      grid-column-end: -1;
+      max-width: 600px;
+    }
+
+    .footer-feedback-container,
     .education-container {
       grid-column-start: 4;
+    }
+
+    .education-container {
       grid-column-end: 6;
     }
 

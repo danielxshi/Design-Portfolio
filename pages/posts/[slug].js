@@ -23,9 +23,7 @@ export default function Post({ post, morePosts, preview }) {
 
   return (
     <Layout preview={preview}>
-      <Container>
         <Header />
-        {/* {console.log("test" + post.projectDate, post.projectDescription, post.projectUrl, post.projectType)} */}
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -35,26 +33,33 @@ export default function Post({ post, morePosts, preview }) {
                 <title>{`${post.title} | DANIEL'S PORTFOLIO `}</title>
                 <meta property="og:image" content={post.coverImage.url} />
               </Head>
-              <PostHeader title={post.title} coverImage={post.coverImage} />
-              <p>{post.projectDescription}</p>
-              <Link target="_blank" href={post.projectUrl}>
-                Click
-              </Link>
+              {/* <PostHeader title={post.title} coverImage={post.coverImage} /> */}
 
-              <p>{post.projectType}</p>
-              <p>{post.projectDate}</p>
+              {/* Project Header */}
+              <div className="grid-container">
+                <p>{post.projectDescription}</p>
+                <Link target="_blank" href={post.projectUrl}>
+                  Click
+                </Link>
+                <p>{post.projectType}</p>
+                <p>{post.projectDate}</p>
+              </div>
+
               <PostBody content={post.content} />
             </article>
-            <h3>Wireframes</h3>
-            {console.log("stop" + post.wireframe1)}
-            <ImageHolder title={post.title} url={post.wireframe1.url} />
-            <ImageHolder title={post.title} url={post.wireframe2.url} />
-            <ImageHolder title={post.title} url={post.wireframe3.url} />
-            <ImageHolder title={post.title} url={post.wireframe4.url} />
-            <ImageHolder title={post.title} url={post.wireframe5.url} />
-            <ImageHolder title={post.title} url={post.wireframe6.url} />
-            <ImageHolder title={post.title} url={post.wireframe7.url} />
-            <ImageHolder title={post.title} url={post.wireframe8.url} />
+
+            <section>
+              <h3>Wireframes</h3>
+              <ImageHolder title={post.title} url={post.wireframe1.url} />
+              <ImageHolder title={post.title} url={post.wireframe2.url} />
+              <ImageHolder title={post.title} url={post.wireframe3.url} />
+              <ImageHolder title={post.title} url={post.wireframe4.url} />
+              <ImageHolder title={post.title} url={post.wireframe5.url} />
+              <ImageHolder title={post.title} url={post.wireframe6.url} />
+              <ImageHolder title={post.title} url={post.wireframe7.url} />
+              <ImageHolder title={post.title} url={post.wireframe8.url} />
+            </section>
+
             {/* <CoverImage title={title} url={coverImage.url} /> */}
             <SectionSeparator />
             <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
@@ -65,7 +70,6 @@ export default function Post({ post, morePosts, preview }) {
             )}
           </>
         )}
-      </Container>
     </Layout>
   );
 }

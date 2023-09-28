@@ -4,9 +4,8 @@ h1 {
   color: #474747;
   font-family: Gestura Display TRIAL;
   font-style: normal;
-  font-weight: 700;
-  font-size: 1.1rem;
-  line-height: 1.4rem;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
   letter-spacing: -0.8px;
 }
 
@@ -44,9 +43,9 @@ p {
   color: #474747;
   font-family: "brandon-grotesque", sans-serif;
   font-style: light;
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.4rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
   letter-spacing: -0.48px;
 }
 
@@ -81,7 +80,6 @@ a {
     font-size: 3rem;
     font-family: Gestura Display TRIAL;
     font-style: normal;
-    font-weight: 700;
     line-height: 4.5rem;
     letter-spacing: -2.1px;
   }
@@ -105,7 +103,7 @@ a {
   }
 
   .landing-container {
-    padding-bottom: 2*$sm-margin;
+    padding-bottom: 2 * $sm-margin;
   }
 }
 
@@ -116,7 +114,6 @@ a {
     font-size: 3rem;
     font-family: Gestura Display TRIAL;
     font-style: normal;
-    font-weight: 700;
     line-height: 4.5rem;
     letter-spacing: -2.1px;
   }
@@ -140,7 +137,6 @@ a {
   }
 
   .landing-container {
-    padding-bottom: 2*$sm-margin;
+    padding-bottom: 2 * $sm-margin;
   }
-
 }

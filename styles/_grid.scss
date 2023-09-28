@@ -1,0 +1,8 @@
+@import "_variables.scss";
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin: $container-margin;
+    padding: $container-padding;
+}

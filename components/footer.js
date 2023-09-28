@@ -99,12 +99,12 @@ export default function Footer() {
       {/* </ul> */}
       {/* </div> */}
 
-      {/* <div>
+      <div className="footer-feedback-container">
         <Link href="">portfolio feedback?</Link>
         <div className="">
           <h5>currently seeking work: </h5>
-          <div class="wrapper">
-            <div class="marquee">
+          <div className="wrapper">
+            <div className="marquee">
               <span>
                 {" "}uxui design, front-end design, web design, visual design, videography, photography, product design, 
               </span>
@@ -117,8 +117,8 @@ export default function Footer() {
       </div>
 
       <div>
-        <p>&copy; 2023 Daniel Shi</p>
-      </div> */}
+        <p className="whitespace-nowrap">&copy; 2023 Daniel Shi</p>
+      </div>
     </footer>
   );
 }
