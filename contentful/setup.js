@@ -17,6 +17,7 @@ spaceImport({
   spaceId: CONTENTFUL_SPACE_ID,
   managementToken: CONTENTFUL_MANAGEMENT_TOKEN,
   content: exportFile,
+  projectHeaderDescription: exportFile,
 })
   .then(() => console.log('The content model of your space is set up!'))
   .catch((e) => console.error(e))

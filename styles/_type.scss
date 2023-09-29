@@ -1,11 +1,13 @@
 @import url("https://use.typekit.net/ocd1tda.css");
+$base: 1rem;
+
 
 h1 {
   color: #474747;
   font-family: Gestura Display TRIAL;
   font-style: normal;
-  font-size: 1.4rem;
-  line-height: 1.5rem;
+  font-size: 2rem;
+  line-height: 2rem;
   letter-spacing: -0.8px;
 }
 
@@ -69,9 +71,6 @@ a {
 // @media (min-width: 768px) {
 // }
 // @media (min-width: 1024px) {
-//   //font size
-
-//   //padding and margin
 // }
 
 @media (min-width: 1280px) {

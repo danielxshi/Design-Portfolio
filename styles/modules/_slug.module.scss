@@ -1,0 +1,50 @@
+@import "../_variables.scss";
+
+.post-title-wrapper {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  > :first-child {
+    margin-bottom: $sm-margin;
+    h1 {
+      margin-left: $xs-margin;
+    }
+  }
+//   move to type.scss file
+  * {
+    font-family: Gestura Display TRIAL;
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 2rem;
+    letter-spacing: -0.8px;
+  }
+}
+
+.project-overview{
+    margin: $med-margin auto;
+    display: flex;
+    flex-direction: column;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    div {
+        margin-top: $med-margin;
+    }
+    h3 {
+        text-transform: uppercase;
+        margin-bottom: $sm-margin;
+    }
+}
+
+.project-details{
+    padding: $grid-container-padding;
+    h5 {
+        margin-bottom: $xs-margin;
+    }
+    li {
+        margin-bottom: $sm-margin;
+    }
+}
+
+.post-body-container{
+    padding: 0 1rem;
+
+}

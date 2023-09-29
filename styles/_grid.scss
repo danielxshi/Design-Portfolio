@@ -1,8 +1,16 @@
 @import "_variables.scss";
 
-.grid-container{
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+
+  padding: $grid-container-padding;
+}
+
+@media (min-width: 1536px) {
+  .grid-container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    margin: $container-margin;
-    padding: $container-padding;
+    padding: $grid-container-padding;
+  }
 }

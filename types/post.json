@@ -49,14 +49,6 @@
         "label": "date"
       }
     },
-    "wireframes": {
-      "type": "Image",
-      "config": {
-        "constraint": {},
-        "thumbnails": [],
-        "label": "wireframes"
-      }
-    },
     "projectDate": {
       "type": "Text",
       "config": {

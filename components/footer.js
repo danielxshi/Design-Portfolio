@@ -91,13 +91,9 @@ export const renderSwitch = (params) => {
 export default function Footer() {
   return (
     <footer className="home-container footer-container">
-      {/* <div> */}
-      {/* <ul className="list-wrapper"> */}
       {FooterMessages.FooterItems.map((item, index) => {
         return <>{renderSwitch(item)}</>;
       })}
-      {/* </ul> */}
-      {/* </div> */}
 
       <div className="footer-feedback-container">
         <Link href="">portfolio feedback?</Link>
@@ -106,10 +102,14 @@ export default function Footer() {
           <div className="wrapper">
             <div className="marquee">
               <span>
-                {" "}uxui design, front-end design, web design, visual design, videography, photography, product design, 
+                {" "}
+                uxui design, front-end design, web design, visual design,
+                videography, photography, product design,
               </span>
               <span>
-                {" "}uxui design, front-end design, web design, visual design, videography, photography, product design, 
+                {" "}
+                uxui design, front-end design, web design, visual design,
+                videography, photography, product design,
               </span>
             </div>
           </div>
