@@ -52,6 +52,10 @@ const FooterItems = [
           link: "LinkedIN",
           url: "https://"
         },
+        {
+          link: "Behance",
+          url: "https://"
+        },
       ],
     },
   },
@@ -62,4 +66,3 @@ const FooterMessages = {
 };
 
 export default FooterMessages;
-
