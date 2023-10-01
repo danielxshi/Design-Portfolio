@@ -89,6 +89,7 @@ a {
   margin: auto;
   justify-content: space-between;
   padding-bottom: 2 * $sm-margin;
+  margin-bottom: env(safe-area-inset-bottom)
 }
 
 .intro-container {
