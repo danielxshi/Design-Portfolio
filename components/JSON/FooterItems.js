@@ -46,16 +46,16 @@ const FooterItems = [
       link: [
         {
           link: "Instagram",
-          url: "https://"
+          url: "https://www.instagram.com/danielxshi/"
         },
         {
           link: "LinkedIN",
-          url: "https://"
+          url: "https://www.linkedin.com/in/daniel-xiang-shi/"
         },
-        {
-          link: "Behance",
-          url: "https://"
-        },
+        // {
+        //   link: "Behance",
+        //   url: "https://"
+        // },
       ],
     },
   },
