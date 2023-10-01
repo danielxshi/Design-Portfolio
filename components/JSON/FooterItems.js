@@ -52,10 +52,6 @@ const FooterItems = [
           link: "LinkedIN",
           url: "https://"
         },
-        // {
-        //   link: "Behance",
-        //   url: "https://"
-        // },
       ],
     },
   },
@@ -67,6 +63,3 @@ const FooterMessages = {
 
 export default FooterMessages;
 
-// paragraph: {
-//   text: "（本网讯）为了庆祝三八国际妇女节，加拿大温州同乡总会于2023年3月8日下午在会所内为温州籍女性朋友们特别组织了一场别开生面的免费花艺活动。            ",
-// },
