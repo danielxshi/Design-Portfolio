@@ -24,7 +24,7 @@ export const renderSwitch = (params) => {
                 </li>
               </>
             ))}
-          </ul>{" "}
+          </ul>
         </div>
       );
     case "education":
@@ -40,7 +40,7 @@ export const renderSwitch = (params) => {
                 </li>
               </>
             ))}
-          </ul>{" "}
+          </ul>
         </div>
       );
 
@@ -58,7 +58,7 @@ export const renderSwitch = (params) => {
                 </li>
               </>
             ))}
-          </ul>{" "}
+          </ul>
         </div>
       );
     case "socials":
@@ -73,13 +73,13 @@ export const renderSwitch = (params) => {
                 </li>
               </>
             ))}
-          </ul>{" "}
+          </ul>
         </div>
       );
     default:
       return (
         <>
-          {" "}
+          
           {JSON.stringify(params)}
           <br></br>
           {keys[0]}
@@ -102,12 +102,12 @@ export default function Footer() {
           <div className="wrapper">
             <div className="marquee">
               <span>
-                {" "}
+                
                 uxui design, front-end design, web design, visual design,
                 videography, photography, product design,
               </span>
               <span>
-                {" "}
+                
                 uxui design, front-end design, web design, visual design,
                 videography, photography, product design,
               </span>
