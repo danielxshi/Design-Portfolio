@@ -15,7 +15,7 @@ export const renderSwitch = (params) => {
     case "contact":
       return (
         <div className="footer-contact-container">
-          <h4>let's work</h4>
+          <h4>say hello</h4>
           <ul>
             {test2.map((item, index) => (
               <>
