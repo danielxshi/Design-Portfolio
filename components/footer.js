@@ -15,7 +15,7 @@ export const renderSwitch = (params) => {
     case "contact":
       return (
         <div className="footer-contact-container">
-          <h5>let's work</h5>
+          <h4>let's work</h4>
           <ul>
             {test2.map((item, index) => (
               <>
@@ -30,7 +30,7 @@ export const renderSwitch = (params) => {
     case "education":
       return (
         <div className="education-container">
-          <h5>education</h5>
+          <h4>education</h4>
           <ul>
             {test2.map((item, index) => (
               <>
@@ -47,7 +47,7 @@ export const renderSwitch = (params) => {
     case "experience":
       return (
         <div className="experience-container">
-          <h5>experience</h5>
+          <h4>experience</h4>
           <ul>
             {test2.map((item, index) => (
               <>
@@ -64,7 +64,7 @@ export const renderSwitch = (params) => {
     case "socials":
       return (
         <div className="social-container">
-          <h5>links</h5>
+          <h4>links</h4>
           <ul>
             {test2.map((item, index) => (
               <>
@@ -90,7 +90,7 @@ export const renderSwitch = (params) => {
 
 export default function Footer() {
   return (
-    <footer className="home-container footer-container">
+    <footer className="footer-container">
       {FooterMessages.FooterItems.map((item, index) => {
         return <>{renderSwitch(item)}</>;
       })}
@@ -98,7 +98,7 @@ export default function Footer() {
       <div className="footer-feedback-container">
         <Link href="">portfolio feedback?</Link>
         <div className="">
-          <h5>currently seeking work: </h5>
+          <h4>currently seeking work: </h4>
           <div className="wrapper">
             <div className="marquee">
               <span>

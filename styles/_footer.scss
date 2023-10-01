@@ -3,33 +3,12 @@
 @tailwind utilities;
 
 .footer-container {
+  padding: 1rem 1rem;
   display: flex;
   flex-wrap: wrap;
   .list-wrapper {
     display: flex;
     flex-wrap: wrap;
-  }
-  h5,
-  span {
-    color: var(--Text-Color, #474747);
-    font-family: "brandon-grotesque", sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    letter-spacing: -0.05rem;
-  }
-  ul h5 {
-    margin-bottom: $sm-margin;
-  }
-  a,
-  p {
-    color: #474747;
-    font-family: "brandon-grotesque", sans-serif;
-    font-style: light;
-    font-weight: 300;
-    font-size: 1rem;
-    line-height: 1.4rem;
-    letter-spacing: -0.48px;
   }
   .education-container li,
   .experience-container li {
@@ -80,6 +59,7 @@
   .footer-container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    padding: $sm-margin $med-margin;
 
     .footer-contact-container {
       grid-column-start: 1;
@@ -162,20 +142,6 @@
     .list-wrapper {
       display: flex;
       flex-wrap: wrap;
-    }
-    a {
-      font-size: 1.5rem;
-      line-height: 150%;
-    }
-    h5,
-    span {
-      color: var(--Text-Color, #474747);
-      font-family: "brandon-grotesque", sans-serif;
-      font-size: 1.5rem;
-
-      font-style: normal;
-      font-weight: 700;
-      letter-spacing: -0.05rem;
     }
     ul h5 {
       margin-bottom: $sm-margin;

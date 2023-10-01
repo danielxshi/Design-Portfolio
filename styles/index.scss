@@ -29,13 +29,15 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  color: $font-color;
+  font-family: "brandon-grotesque", sans-serif;
 }
 
-.dark-mode{
-    background-color: black !important;
-    * {
-        color: white !important;
-    }
+.dark-mode {
+  background-color: black !important;
+  * {
+    color: white !important;
+  }
 }
 
 a {
@@ -92,9 +94,6 @@ a {
   .intro-cv {
     margin-top: $xs-margin;
     display: flex;
-  }
-  .subhead {
-    margin-top: $xs-margin;
   }
   a {
     color: #474747;
@@ -182,15 +181,6 @@ a {
   * {
     margin-bottom: $sm-margin;
   }
-  h3 {
-    color: var(--Text-Color, #474747);
-    font-family: Gestura Headline TRIAL;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 24px */
-    letter-spacing: -0.64px;
-  }
 }
 
 // ------=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=
@@ -242,21 +232,9 @@ a {
     * {
       margin-bottom: $sm-margin;
     }
-    h3 {
-      color: var(--Text-Color, #474747);
-      font-family: Gestura Headline TRIAL;
-      font-size: 1.5rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 150%; /* 24px */
-      letter-spacing: -0.64px;
-    }
   }
 }
 @media (min-width: 1536px) {
-  .mobile-contact-card {
-    background-color: tomato;
-  }
   .intro-container {
     width: 1203px;
   }
@@ -294,15 +272,6 @@ a {
   .post-preview {
     * {
       margin-bottom: $sm-margin;
-    }
-    h3 {
-      color: var(--Text-Color, #474747);
-      font-family: Gestura Headline TRIAL;
-      font-size: 1.5rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 150%; /* 24px */
-      letter-spacing: -0.64px;
     }
   }
 }

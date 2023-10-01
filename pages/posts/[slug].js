@@ -1,16 +1,16 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import ErrorPage from "next/error";
-import Container from "../../components/container";
 import PostBody from "../../components/post-body";
 import MoreStories from "../../components/more-stories";
-import Header from "../../components/header";
-import style from "../../styles/modules/_slug.module.scss";
-import PostHeader from "../../components/post-header";
-import SectionSeparator from "../../components/section-separator";
 import Layout from "../../components/layout";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
+import style from "../../styles/modules/_slug.module.scss";
+import Container from "../../components/container";
+import Header from "../../components/header";
+import PostHeader from "../../components/post-header";
+import SectionSeparator from "../../components/section-separator";
 import Link from "next/link";
 import BackButton from "../../components/Button/BackButton";
 // !Testing CoverImage
@@ -37,18 +37,23 @@ export default function Post({ post, morePosts, preview }) {
             </Head>
 
             {/* Project Header */}
-            <section className="grid-container">
+            <section
+              className={[["grid-container"], style["slug-header"]].join(" ")}
+            >
               {/* Header */}
+              <BackButton href="/#expertises" />
               <div className={style["post-title-wrapper"]}>
-                <div className="flex">
-                  <BackButton href="/#expertises" />
-                  <h1>{post.title}</h1>
-                </div>
-                <p>{post.projectDescription}</p>
+                {" "}
+                <h1>{post.title}</h1>
               </div>
+              <p className={style["post-description"]}>
+                {post.projectDescription}
+              </p>
 
               {/* Project Overview */}
-              <div className={style["project-overview"]}>
+              <div
+                className={[style["project-overview"], ["container"]].join(" ")}
+              >
                 <div>
                   <h3>Client</h3>
                   <p>{post.client}</p>
@@ -62,52 +67,58 @@ export default function Post({ post, morePosts, preview }) {
                   <p>{post.solution}</p>
                 </div>
               </div>
-            </section>
 
-            {/* Project Details */}
-            <div className={style["project-details"]}>
-              <ul>
-                <li>
-                  <h5>Role</h5>
-                  <p>{post.role}</p>
-                </li>
-                <li>
-                  <h5>Team</h5>
-                  <p>{post.team}</p>
-                </li>
-                <li>
-                  <h5>Website</h5>
-                  <p>{post.website}</p>
-                </li>
-              </ul>
-            </div>
+              {/* Project Details */}
+              <div className={style["project-details"]}>
+                <ul>
+                  <li>
+                    <h4>Role</h4>
+                    <p>{post.role}</p>
+                  </li>
+                  <li>
+                    <h4>Team</h4>
+                    <p>{post.team}</p>
+                  </li>
+                  <li>
+                    <h4>Website</h4>
+                    <p>{post.website}</p>
+                  </li>
+                </ul>
+              </div>
+            </section>
 
             <PostBody content={post.content} />
           </article>
-
-          <section className={style["dark-mode"]}>
-            <h3>Wireframes</h3>
-            <ImageHolder title={post.title} url={post.wireframe1.url} />
-            <ImageHolder title={post.title} url={post.wireframe2.url} />
-            <ImageHolder title={post.title} url={post.wireframe3.url} />
-            <ImageHolder title={post.title} url={post.wireframe4.url} />
-            <ImageHolder title={post.title} url={post.wireframe5.url} />
-            <ImageHolder title={post.title} url={post.wireframe6.url} />
-            <ImageHolder title={post.title} url={post.wireframe7.url} />
-            <ImageHolder title={post.title} url={post.wireframe8.url} />
+          <section
+            className={[
+              style["post-body-container"],
+              style["slug-final-product"],
+            ].join(" ")}
+          >
+            {" "}
+            <h2>Wireframes</h2>
+            <div>
+              <ImageHolder title={post.title} url={post.wireframe1.url} />
+              <ImageHolder title={post.title} url={post.wireframe2.url} />
+              <ImageHolder title={post.title} url={post.wireframe3.url} />
+              <ImageHolder title={post.title} url={post.wireframe4.url} />
+              <ImageHolder title={post.title} url={post.wireframe5.url} />
+              <ImageHolder title={post.title} url={post.wireframe6.url} />
+              <ImageHolder title={post.title} url={post.wireframe7.url} />
+              <ImageHolder title={post.title} url={post.wireframe8.url} />
+            </div>
           </section>
 
           {/* <CoverImage title={title} url={coverImage.url} /> */}
 
           <section
             className={[
-              style["max-w-2xl mx-auto]"],
+              ["max-w-2xl mx-auto container]"],
               style["post-body-container"],
-              style["dark-mode"],
             ].join(" ")}
           >
-            <h2 className="pt-32 mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
-              More Stories
+            <h2 className="pt-32 mb-8">
+              More Projects
             </h2>
             {morePosts && morePosts.length > 0 && (
               <MoreStories posts={morePosts} />
