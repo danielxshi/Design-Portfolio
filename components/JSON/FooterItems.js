@@ -52,10 +52,10 @@ const FooterItems = [
           link: "LinkedIN",
           url: "https://"
         },
-        {
-          link: "Behance",
-          url: "https://"
-        },
+        // {
+        //   link: "Behance",
+        //   url: "https://"
+        // },
       ],
     },
   },
