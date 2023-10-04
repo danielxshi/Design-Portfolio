@@ -15,6 +15,7 @@ import Link from "next/link";
 import BackButton from "../../components/Button/BackButton";
 // !Testing CoverImage
 import ImageHolder from "../../components/imageholder";
+import SlugNav from "../../components/Navigation/slug-nav";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
@@ -36,40 +37,76 @@ export default function Post({ post, morePosts, preview }) {
               <meta property="og:image" content={post.coverImage.url} />
             </Head>
 
-            {/* Project Header */}
+            {/* mobile */}
             <section
-              className={[["grid-container"], style["slug-header"]].join(" ")}
+              className={[
+                ["grid-container mobile-display-only"],
+                style["slug-header"],
+                style["slug-header-mobile"],
+              ].join(" ")}
             >
               {/* Header */}
               <BackButton href="/#expertises" />
+
               <div className={style["post-title-wrapper"]}>
                 {" "}
                 <h1>{post.title}</h1>
               </div>
-              <p className={style["post-description"]}>
-                {post.projectDescription}
-              </p>
-
-              {/* Project Overview */}
               <div
-                className={[style["project-overview"], ["container"]].join(" ")}
+                className={[
+                  // ["col-start-1 col-end-auto mb-0 mt-auto flex flex-col"],
+                  style["post-description"],
+                ].join(" ")}
               >
-                <div>
-                  <h3>Client</h3>
-                  <p>{post.client}</p>
-                </div>
-                <div>
-                  <h3>Task</h3>
-                  <p>{post.task}</p>
-                </div>
-                <div>
-                  <h3>Solution</h3>
-                  <p>{post.solution}</p>
-                </div>
+                <h4 className="leading-none">website redesign</h4>
+                <p>-</p>
+                {/* <span>-</span> */}
+                <p className={style["post-description"]}>
+                  {post.projectDescription}
+                </p>
+              </div>
+            </section>
+
+            {/* deesktop */}
+            <section
+              className={[
+                ["grid-container"],
+                style["slug-header"],
+                style["slug-header-desktop"],
+              ].join(" ")}
+            >
+              {/* Header */}
+              <BackButton href="/#expertises" />
+
+              <div className={style["post-title-wrapper"]}>
+                {" "}
+                <h1>{post.title}</h1>
               </div>
 
-              {/* Project Details */}
-              <div className={style["project-details"]}>
+              <div
+                className={[
+                  [""],
+                  style["post-description"],
+                  style["slug-header-grid"],
+                  style["post-description-desktop-container"],
+                ].join(" ")}
+              >
+                <div>
+                  <h4 className="leading-none">Website Redesign</h4>
+                  <p>-</p>
+                </div>
+                <p className={style["post-description"]}>
+                  {post.projectDescription}
+                </p>
+              </div>
+
+              <div
+                className={[
+                  ["mt-auto mb-0 "],
+                  style["project-details-desktop"],
+                  style["project-details"],
+                ].join(" ")}
+              >
                 <ul>
                   <li>
                     <h4>Role</h4>
@@ -86,6 +123,59 @@ export default function Post({ post, morePosts, preview }) {
                 </ul>
               </div>
             </section>
+
+            {/* Project Header */}
+
+            {/* Project Details */}
+            <div
+              className={[
+                ["mobile-display-only"],
+                style["project-details"],
+                [" grid-container"],
+              ].join(" ")}
+            >
+              <ul className="col-span-full">
+                <li>
+                  <h4>Role</h4>
+                  <p>{post.role}</p>
+                </li>
+                <li>
+                  <h4>Team</h4>
+                  <p>{post.team}</p>
+                </li>
+                <li>
+                  <h4>Website</h4>
+                  <p>{post.website}</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* Project Overview */}
+            <div
+              className={[
+                style["project-overview"],
+                ["grid-container"],
+                [""],
+              ].join(" ")}
+            >
+              {/* Subnav */}
+              <SlugNav title={post.title} />
+              <div className="container max-w-2xl mx-auto">
+                <h2 className="leading-none">overview.</h2>
+                <div>
+                  <h3>Client</h3>
+                  <p>{post.client}</p>
+                </div>
+                <div>
+                  <h3>Task</h3>
+                  <p>{post.task}</p>
+                </div>
+                <div>
+                  <h3>Solution</h3>
+                  <p>{post.solution}</p>
+                </div>
+              </div>
+            </div>
 
             <PostBody content={post.content} />
           </article>
@@ -117,9 +207,7 @@ export default function Post({ post, morePosts, preview }) {
               style["post-body-container"],
             ].join(" ")}
           >
-            <h2 className="pt-32 mb-8">
-              More Projects
-            </h2>
+            <h2 className="pt-32 mb-8">More Projects</h2>
             {morePosts && morePosts.length > 0 && (
               <MoreStories posts={morePosts} />
             )}

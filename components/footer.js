@@ -19,7 +19,7 @@ export const renderSwitch = (params) => {
           <ul>
             {test2.map((item, index) => (
               <>
-                <li>
+                <li key={index}>
                   <Link href="">{item["text"]}</Link>
                 </li>
               </>
@@ -34,7 +34,7 @@ export const renderSwitch = (params) => {
           <ul>
             {test2.map((item, index) => (
               <>
-                <li>
+                <li key={index}>
                   <p className="whitespace-nowrap">{item["school"]}</p>
                   <p>{item["certification"]}</p>
                 </li>
@@ -51,7 +51,7 @@ export const renderSwitch = (params) => {
           <ul>
             {test2.map((item, index) => (
               <>
-                <li>
+                <li key={index}>
                   <p className="whitespace-nowrap	">{item["company"]}</p>
                   <p className="whitespace-nowrap	">{item["position"]}</p>
                   <p className="whitespace-nowrap	">{item["date"]}</p>
@@ -68,7 +68,7 @@ export const renderSwitch = (params) => {
           <ul>
             {test2.map((item, index) => (
               <>
-                <li>
+                <li >
                   <Link href={item["url"]}>{item["link"]}</Link>
                 </li>
               </>
