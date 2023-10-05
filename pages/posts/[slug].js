@@ -15,7 +15,7 @@ import Link from "next/link";
 import BackButton from "../../components/Button/BackButton";
 // !Testing CoverImage
 import ImageHolder from "../../components/imageholder";
-// import SlugNav from "../../components/Navigation/slug-side-nav";
+import SlugNav from "../../components/Navigation/slug-side-nav";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
