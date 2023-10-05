@@ -17,6 +17,7 @@ import BackButton from "../../components/Button/BackButton";
 import ImageHolder from "../../components/imageholder";
 import SlugNav from "../../components/Navigation/slug-side-nav";
 
+
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
 
@@ -83,7 +84,7 @@ export default function Post({ post, morePosts, preview }) {
                 style["slug-header"],
                 style["slug-header-desktop"],
               ].join(" ")}
-              style={bgStyling}
+                            style={bgStyling}
 
             >
               {/* Header */}
