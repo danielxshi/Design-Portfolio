@@ -20,14 +20,14 @@ export default function Post({ post, morePosts, preview }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const bgStyling = {
-    backgroundImage: `url('${post.headerImage.url}')`,
-    width: "100%",
-    height: "100%",
-    backgroundPosition: "center right",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-  };
+  // const bgStyling = {
+  //   backgroundImage: `url('${post.headerImage.url}')`,
+  //   width: "100%",
+  //   height: "100%",
+  //   backgroundPosition: "center right",
+  //   backgroundSize: "cover",
+  //   backgroundRepeat: "no-repeat",
+  // };
   return (
     <Layout preview={preview}>
       {/* <Header /> */}
