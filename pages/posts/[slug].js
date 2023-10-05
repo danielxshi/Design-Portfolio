@@ -16,6 +16,7 @@ import BackButton from "../../components/Button/BackButton";
 // !Testing CoverImage
 import ImageHolder from "../../components/imageholder";
 import SlugNav from "../../components/Navigation/slug-side-nav";
+import ContentfulHeaderImage from "../../components/Image/contentful-header-image";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
@@ -25,7 +26,7 @@ export default function Post({ post, morePosts, preview }) {
   }
 
   const bgStyling = {
-    backgroundImage: `url('${post.coverImage.url}')`,
+    backgroundImage: `url('${post.headerImage.url}')`,
     width: "100%",
     height: "100%",
     backgroundPosition: "center right",
@@ -54,6 +55,7 @@ export default function Post({ post, morePosts, preview }) {
               ].join(" ")}
               style={bgStyling}
             >
+              <ContentfulHeaderImage url={post.headerImage.url} />
               {/* Header */}
               <BackButton href="/#expertises" />
 
@@ -83,8 +85,8 @@ export default function Post({ post, morePosts, preview }) {
                 style["slug-header"],
                 style["slug-header-desktop"],
               ].join(" ")}
-              style={bgStyling}
             >
+              <ContentfulHeaderImage url={post.headerImage.url} />
               {/* Header */}
               <BackButton href="/#expertises" />
 
