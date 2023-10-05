@@ -25,7 +25,7 @@ export default function Post({ post, morePosts, preview }) {
   }
 
   const bgStyling = {
-    backgroundImage: `url('${post.headerImage.url}')`,
+    backgroundImage: `url('${post.coverImage.url}')`,
     width: "100%",
     height: "100%",
     backgroundPosition: "center right",
