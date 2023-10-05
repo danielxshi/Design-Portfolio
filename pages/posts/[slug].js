@@ -92,7 +92,6 @@ export default function Post({ post, morePosts, preview }) {
               <BackButton href="/#expertises" />
 
               <div className={style["post-title-wrapper"]}>
-                {" "}
                 <h1>{post.title}</h1>
               </div>
 
