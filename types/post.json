@@ -35,6 +35,14 @@
         "label": "coverimage"
       }
     },
+    "headerImage": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "headerImage"
+      }
+    },
     "wireframe1": {
       "type": "Image",
       "config": {

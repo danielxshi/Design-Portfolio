@@ -15,11 +15,20 @@ import Link from "next/link";
 import BackButton from "../../components/Button/BackButton";
 // !Testing CoverImage
 import ImageHolder from "../../components/imageholder";
-import SlugNav from "../../components/Navigation/slug-nav";
+import SlugNav from "../../components/Navigation/slug-side-nav";
+import css from "styled-jsx/css";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
 
+  const bgStyling = {
+    backgroundImage: `url('${post.headerImage.url}')`,
+    width: "100%",
+    height: "100%",
+    backgroundPosition: "center right",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  };
   if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />;
   }
@@ -44,6 +53,7 @@ export default function Post({ post, morePosts, preview }) {
                 style["slug-header"],
                 style["slug-header-mobile"],
               ].join(" ")}
+              style={bgStyling}
             >
               {/* Header */}
               <BackButton href="/#expertises" />
@@ -74,6 +84,8 @@ export default function Post({ post, morePosts, preview }) {
                 style["slug-header"],
                 style["slug-header-desktop"],
               ].join(" ")}
+              style={bgStyling}
+
             >
               {/* Header */}
               <BackButton href="/#expertises" />
@@ -179,16 +191,26 @@ export default function Post({ post, morePosts, preview }) {
               </div>
             </div>
 
-            <PostBody content={post.content} />
+            <section>
+              {/* <h2 id="" className="leading-none">
+                process.
+              </h2> */}
+              <PostBody
+                title={"process"}
+                id={"process"}
+                content={post.content}
+              />
+            </section>
           </article>
           <section
+            id="wireframes"
             className={[
               style["post-body-container"],
               style["slug-final-product"],
             ].join(" ")}
           >
             {" "}
-            <h2>Wireframes</h2>
+            <h2 className="leading-none">wireframes.</h2>{" "}
             <div>
               <ImageHolder title={post.title} url={post.wireframe1.url} />
               <ImageHolder title={post.title} url={post.wireframe2.url} />
@@ -202,6 +224,9 @@ export default function Post({ post, morePosts, preview }) {
           </section>
 
           {/* <CoverImage title={title} url={coverImage.url} /> */}
+          <section id="conclusion" className="grid-container">
+            <h2 className="leading-none">conclusion.</h2>
+          </section>
 
           <section
             className={[
@@ -209,7 +234,7 @@ export default function Post({ post, morePosts, preview }) {
               style["post-body-container"],
             ].join(" ")}
           >
-            <h2 className="pt-32 mb-8">More Projects</h2>
+            <h2 className="pt-32 mb-8">more projects.</h2>
             {morePosts && morePosts.length > 0 && (
               <MoreStories posts={morePosts} />
             )}

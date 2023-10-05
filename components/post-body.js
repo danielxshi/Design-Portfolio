@@ -15,15 +15,16 @@ const customMarkdownOptions = (content) => ({
   },
 })
 
-export default function PostBody({ content }) {
+export default function PostBody({ id, content }) {
   return (
-    <div className={[["container max-w-2xl mx-auto"], style["post-body-container"]].join(" ")}>
+    <section id={id} className={[["container max-w-2xl mx-auto"], style["post-body-container"]].join(" ")}>
+      <h2>process.</h2>
       <div className={markdownStyles['markdown']}>
         {documentToReactComponents(
           content.json,
           customMarkdownOptions(content)
         )}
       </div>
-    </div>
+    </section>
   )
 }
