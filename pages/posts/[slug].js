@@ -25,14 +25,14 @@ export default function Post({ post, morePosts, preview }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  // const bgStyling = {
-  //   backgroundImage: `url('${post.headerImage.url}')`,
-  //   width: "100%",
-  //   height: "100%",
-  //   backgroundPosition: "center right",
-  //   backgroundSize: "cover",
-  //   backgroundRepeat: "no-repeat",
-  // };
+  const bgStyling = {
+    backgroundImage: `url('${post.headerImage.url}')`,
+    width: "100%",
+    height: "100%",
+    backgroundPosition: "center right",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  };
   return (
     <Layout preview={preview}>
       {/* <Header /> */}
@@ -53,9 +53,9 @@ export default function Post({ post, morePosts, preview }) {
                 style["slug-header"],
                 style["slug-header-mobile"],
               ].join(" ")}
-              // style={bgStyling}
+              style={bgStyling}
             >
-              <ContentfulHeaderImage url={post.headerImage.url} />
+              {/* <ContentfulHeaderImage url={post.headerImage.url} /> */}
               {/* Header */}
               <BackButton href="/#expertises" />
 
@@ -85,7 +85,7 @@ export default function Post({ post, morePosts, preview }) {
                 style["slug-header"],
                 style["slug-header-desktop"],
               ].join(" ")}
-              // style={bgStyling}
+              style={bgStyling}
             >
               {/* <ContentfulHeaderImage url={post.headerImage.url} /> */}
               {/* Header */}
