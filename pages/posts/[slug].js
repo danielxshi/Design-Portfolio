@@ -17,9 +17,12 @@ import BackButton from "../../components/Button/BackButton";
 import ImageHolder from "../../components/imageholder";
 import SlugNav from "../../components/Navigation/slug-side-nav";
 
-
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
+
+  if (!router.isFallback && !post) {
+    return <ErrorPage statusCode={404} />;
+  }
 
   const bgStyling = {
     backgroundImage: `url('${post.headerImage.url}')`,
@@ -29,10 +32,6 @@ export default function Post({ post, morePosts, preview }) {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
   };
-  if (!router.isFallback && !post) {
-    return <ErrorPage statusCode={404} />;
-  }
-
   return (
     <Layout preview={preview}>
       {/* <Header /> */}
@@ -84,8 +83,7 @@ export default function Post({ post, morePosts, preview }) {
                 style["slug-header"],
                 style["slug-header-desktop"],
               ].join(" ")}
-                            style={bgStyling}
-
+              style={bgStyling}
             >
               {/* Header */}
               <BackButton href="/#expertises" />
