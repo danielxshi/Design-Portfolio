@@ -32,6 +32,7 @@ body {
   color: $font-color;
   font-family: "brandon-grotesque", sans-serif;
   padding-bottom: env(safe-area-inset-bottom);
+  scroll-behavior: smooth;
 }
 
 .dark-mode {

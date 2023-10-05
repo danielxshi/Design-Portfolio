@@ -50,7 +50,7 @@ export default function Post({ post, morePosts, preview }) {
 
               <div className={style["post-title-wrapper"]}>
                 {" "}
-                <h1>{post.title}</h1>
+                <h1 className="leading-none">{post.title}</h1>
               </div>
               <div
                 className={[
@@ -161,7 +161,9 @@ export default function Post({ post, morePosts, preview }) {
               {/* Subnav */}
               <SlugNav title={post.title} />
               <div className="container max-w-2xl mx-auto">
-                <h2 className="leading-none">overview.</h2>
+                <h2 id="overview" className="leading-none">
+                  overview.
+                </h2>
                 <div>
                   <h3>Client</h3>
                   <p>{post.client}</p>

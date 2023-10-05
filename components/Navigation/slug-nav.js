@@ -1,4 +1,7 @@
 import style from "../../styles/modules/_slug.module.scss";
+import Link from "next/link";
+import Router from "next/router";
+import { MouseEvent } from "react";
 
 export default function SlugNav(props) {
   return (
@@ -9,16 +12,16 @@ export default function SlugNav(props) {
       </div>
       <ul className=" flex justify-between">
         <li>
-          <a href="">overview</a>
+          <Link href="#overview">overview</Link>
         </li>
         <li>
-          <a href="">process</a>
+          <Link href="#process">process</Link>
         </li>
         <li>
-          <a href="">wireframes</a>
+          <Link href="#wireframes">wireframes</Link>
         </li>
         <li>
-          <a href="">conclusion</a>
+          <Link href="#conclusion">conclusion</Link>
         </li>
       </ul>
     </nav>
