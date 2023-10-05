@@ -7,11 +7,6 @@ import Layout from "../../components/layout";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
 import style from "../../styles/modules/_slug.module.scss";
-import Container from "../../components/container";
-import Header from "../../components/header";
-import PostHeader from "../../components/post-header";
-import SectionSeparator from "../../components/section-separator";
-import Link from "next/link";
 import BackButton from "../../components/Button/BackButton";
 // !Testing CoverImage
 import ImageHolder from "../../components/imageholder";
@@ -49,13 +44,13 @@ export default function Post({ post, morePosts, preview }) {
             {/* mobile */}
             <section
               className={[
-                ["grid-container mobile-display-only"],
+                ["grid-container mobile-display-only relative"],
                 style["slug-header"],
                 style["slug-header-mobile"],
               ].join(" ")}
-              style={bgStyling}
+              // style={bgStyling}
             >
-              {/* <ContentfulHeaderImage url={post.headerImage.url} /> */}
+              <ContentfulHeaderImage url={post.headerImage.url} />
               {/* Header */}
               <BackButton href="/#expertises" />
 
@@ -81,13 +76,13 @@ export default function Post({ post, morePosts, preview }) {
             {/* deesktop */}
             <section
               className={[
-                ["grid-container"],
+                ["grid-container relative"],
                 style["slug-header"],
                 style["slug-header-desktop"],
               ].join(" ")}
-              style={bgStyling}
+              // style={bgStyling}
             >
-              {/* <ContentfulHeaderImage url={post.headerImage.url} /> */}
+              <ContentfulHeaderImage url={post.headerImage.url} />
               {/* Header */}
               <BackButton href="/#expertises" />
 
@@ -146,7 +141,7 @@ export default function Post({ post, morePosts, preview }) {
                 [" grid-container"],
               ].join(" ")}
             >
-              <ul className="col-span-full">
+              <ul className="container max-w-2xl mx-auto col-span-full">
                 <li>
                   <h4>Role</h4>
                   <p>{post.role}</p>

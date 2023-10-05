@@ -5,7 +5,7 @@ import { MouseEvent } from "react";
 
 export default function SlugNav(props) {
   return (
-    <nav className={[style["slug-nav"], ["col-span-full"]].join(" ")}>
+    <nav className={[style["slug-nav"], ["container max-w-2xl mx-auto col-span-full"]].join(" ")}>
       <div className="">
         <h4 className="slug-nav-header">{props.title}</h4>
         <span>-</span>

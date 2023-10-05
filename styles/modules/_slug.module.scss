@@ -8,11 +8,15 @@
 
 .slug-header-mobile {
   min-height: 100svh;
+  * {z-index: 1}
 }
 
 .slug-header-desktop {
   display: none;
   min-height: 60svh;
+ * {
+  z-index: 1;
+ }
 }
 
 .slug-header-grid{
@@ -95,10 +99,6 @@
   img {
     width: -webkit-fill-available;
   }
-}
-
-.post-body-container {
-  padding: 0 1rem;
 }
 
 // slug nav
