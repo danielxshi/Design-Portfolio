@@ -24,13 +24,13 @@ h2 {
   letter-spacing: -0.8px;
 }
 
-h3 {
-  font-family: Gestura Headline TRIAL;
+h3 { 
   font-size: $base-font;
 }
 
 h4 {
   font-size: $base-font;
+  text-transform: uppercase;
 }
 
 .display-lead {
@@ -98,6 +98,10 @@ em {
   }
 }
 // end of footer
+
+@media (min-width: 375px){
+  
+}
 
 @media (min-width: 1280px) {
   $sm-font: 1.1rem; // footer ?? |  base ÷ 1.6 | smaller than base

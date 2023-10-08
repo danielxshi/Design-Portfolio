@@ -52,6 +52,7 @@ body {
   align-items: center;
   max-height: -webkit-fill-available;
   background-image: url("../public/favicon/portfolio-bg-v2.png");
+  background-position-y: 50%;
 }
 
 .landing-bg-gradient {
@@ -154,7 +155,7 @@ a {
 .about-container {
   .cta-about {
     margin-top: $sm-margin;
-    a {
+    span {
       margin: auto;
       margin-right: 0;
     }
@@ -255,6 +256,12 @@ a {
   }
 }
 
+.back-button {
+  margin-left: -1em;
+  a{
+    width: fit-content;
+  }
+}
 // ------=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=
 
 @media (min-width: 413px) {

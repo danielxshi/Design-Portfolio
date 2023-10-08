@@ -4,7 +4,7 @@ import { AnimationConfig } from "./AnimationConfig";
 import Link from "next/link";
 
 const ArrowLeftIcon = ({ isHovering }) => (
-  <div className="w-fit h-fit overflow-hidden rotate-180">
+  <div className="w-fit h-fit overflow-hidden rotate-180 back-button">
     <motion.div
       className="flex flex-row"
       transition={{
@@ -42,15 +42,18 @@ const BackButton = ({ href = "#" }) => {
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <Link href={href} className="reset-link inline-block"
-    onMouseEnter={() => setIsHovering(true)}
-    onMouseLeave={() => setIsHovering(false)}>
+    <Link
+      href={href}
+      className="reset-link inline-block"
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
       {/* <a
         className="reset-link inline-block"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       > */}
-        <ArrowLeftIcon isHovering={isHovering} />
+      <ArrowLeftIcon isHovering={isHovering} />
       {/* </a> */}
     </Link>
   );

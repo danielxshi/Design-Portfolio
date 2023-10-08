@@ -15,7 +15,7 @@ export const renderSwitch = (params) => {
     case "contact":
       return (
         <div className="footer-contact-container">
-          <h4>say hello</h4>
+          <h3>say hello</h3>
           <ul>
             {test2.map((item, index) => (
               <>
@@ -30,7 +30,7 @@ export const renderSwitch = (params) => {
     case "education":
       return (
         <div className="education-container">
-          <h4>education</h4>
+          <h3>education</h3>
           <ul>
             {test2.map((item, index) => (
               <>
@@ -47,7 +47,7 @@ export const renderSwitch = (params) => {
     case "experience":
       return (
         <div className="experience-container">
-          <h4>experience</h4>
+          <h3>experience</h3>
           <ul>
             {test2.map((item, index) => (
               <>
@@ -64,11 +64,11 @@ export const renderSwitch = (params) => {
     case "socials":
       return (
         <div className="social-container">
-          <h4>links</h4>
+          <h3>links</h3>
           <ul>
             {test2.map((item, index) => (
               <>
-                <li>
+                <li className="underscore-cta">
                   <Link href={item["url"]}>{item["link"]}</Link>
                 </li>
               </>
@@ -97,15 +97,17 @@ export default function Footer() {
       <div className="footer-feedback-container">
         <Link href="">portfolio feedback?</Link>
         <div className="">
-          <h4>currently seeking work: </h4>
+          <p>currently seeking work: </p>
           <div className="wrapper">
             <div className="marquee">
               <span>
-                {" "}uxui design, front-end design, web design, visual design,
+                {" "}
+                uxui design, front-end design, web design, visual design,
                 videography, photography, product design,
               </span>
               <span>
-                {" "}uxui design, front-end design, web design, visual design,
+                {" "}
+                uxui design, front-end design, web design, visual design,
                 videography, photography, product design,
               </span>
             </div>

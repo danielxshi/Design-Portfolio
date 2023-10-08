@@ -63,7 +63,9 @@ export default function Post({ post, morePosts, preview }) {
                   style["post-description"],
                 ].join(" ")}
               >
-                <h4 className="leading-none">website redesign | {post.title} </h4>
+                <h4 className="leading-none">
+                  website redesign | {post.title}{" "}
+                </h4>
                 <p>-</p>
                 {/* <span>-</span> */}
                 <h1 className={style["post-description"]}>
@@ -98,7 +100,9 @@ export default function Post({ post, morePosts, preview }) {
                 ].join(" ")}
               >
                 <div>
-                  <h4 className="leading-none">Website Redesign | {post.title}</h4>
+                  <h4 className="leading-none">
+                    Website Redesign | {post.title}
+                  </h4>
                   <p>-</p>
                 </div>
                 <h1 className={style["post-description"]}>
@@ -167,19 +171,19 @@ export default function Post({ post, morePosts, preview }) {
               {/* Subnav */}
               <SlugNav title={post.title} />
               <div className="container max-w-2xl mx-auto">
-                <h2 id="overview" className="leading-none">
+                <h2 id="overview" className={[style["slug-h2"]]}>
                   overview.
                 </h2>
                 <div>
-                  <h3>Client</h3>
+                  <h4 className="display-lead mb-4">Client</h4>
                   <p>{post.client}</p>
                 </div>
                 <div>
-                  <h3>Task</h3>
+                  <h4 className="display-lead mb-4">Task</h4>
                   <p>{post.task}</p>
                 </div>
                 <div>
-                  <h3>Solution</h3>
+                  <h4 className="display-lead mb-4">Solution</h4>
                   <p>{post.solution}</p>
                 </div>
               </div>
@@ -187,10 +191,7 @@ export default function Post({ post, morePosts, preview }) {
 
             <section
               id="process"
-              className={[
-                style["post-body-container"],
-                ["product"],
-              ].join(" ")}
+              className={[style["post-body-container"], ["product"]].join(" ")}
             >
               {" "}
               {/* <h2 id="" className="leading-none">
@@ -198,7 +199,10 @@ export default function Post({ post, morePosts, preview }) {
               </h2> */}
               <PostBody title={"process"} content={post.content} />
             </section>
-          </article>
+          </article>{" "}
+          <div className="container max-w-2xl mx-auto">
+            <h2 className="leading-none">wireframes.</h2>{" "}
+          </div>
           <section
             id="wireframes"
             className={[
@@ -206,8 +210,6 @@ export default function Post({ post, morePosts, preview }) {
               style["slug-final-product"],
             ].join(" ")}
           >
-            {" "}
-            <h2 className="leading-none">wireframes.</h2>{" "}
             <div>
               <ImageHolder title={post.title} url={post.wireframe1.url} />
               <ImageHolder title={post.title} url={post.wireframe2.url} />
@@ -219,12 +221,10 @@ export default function Post({ post, morePosts, preview }) {
               <ImageHolder title={post.title} url={post.wireframe8.url} />
             </div>
           </section>
-
           {/* <CoverImage title={title} url={coverImage.url} /> */}
-          <section id="conclusion" className="grid-container">
+          <section id="conclusion" className="container max-w-2xl mx-auto">
             <h2 className="leading-none">conclusion.</h2>
           </section>
-
           <section
             className={[
               ["max-w-2xl mx-auto container]"],

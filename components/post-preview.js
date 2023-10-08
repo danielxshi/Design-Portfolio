@@ -6,22 +6,24 @@ export default function PostPreview({
   coverImage,
   excerpt,
   slug,
+  projectType
 }) {
   return (
     <div className="post-preview">
       <div className="">
         <CoverImage title={title} slug={slug} url={coverImage.url} />
       </div>
-      <h3 className="">
+      <Link href={`/posts/${slug}`} className="hover:underline">
         {/* <Link href={`/posts/${slug}`} className="hover:underline">
           {title}
         </Link> */}
         {title}
-      </h3>
-      <h3>
-        Logo Design
-      </h3>
+      <h4>
+        {projectType}
+      </h4>
       <p className="leading-relaxed mb-4">{excerpt}</p>
+
+      </Link>
     </div>
   )
 }

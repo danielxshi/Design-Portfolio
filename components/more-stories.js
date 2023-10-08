@@ -11,6 +11,7 @@ export default function MoreStories({ posts }) {
             coverImage={post.coverImage}
             slug={post.slug}
             excerpt={post.excerpt}
+            projectType={post.projectType}
           />
         ))}
       </div>

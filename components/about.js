@@ -31,19 +31,16 @@ export default function about() {
         </div>
       </div>
       <div className="cta-about flex">
-        <div>
-          <ul className="flex">
-            <li className="underscore-cta">
-              <a href="">resume</a>
-            </li>
-            <li className="underscore_cta">
-              <a href="">linkedin</a>
-            </li>
-          </ul>
+        <div className="underscore-cta">
+          <a href="">resume</a>
         </div>
-        <a className="" href="">
-          work collection ↴
-        </a>
+        <div className="underscore-cta ml-4">
+          <a href="">linkedin</a>
+        </div>
+
+        <span className="" href="">
+          <strong>work collection ↴</strong>
+        </span>
       </div>
     </div>
   );
