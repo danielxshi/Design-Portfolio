@@ -54,22 +54,21 @@ export default function Post({ post, morePosts, preview }) {
               {/* Header */}
               <BackButton href="/#expertises" />
 
-              <div className={style["post-title-wrapper"]}>
-                {" "}
-                <h1 className="leading-none">{post.title}</h1>
-              </div>
+              {/* <div className={[[""], style["post-title-wrapper"]].join(" ")}>
+                <h3 className="">{post.title}</h3>
+              </div> */}
               <div
                 className={[
                   // ["col-start-1 col-end-auto mb-0 mt-auto flex flex-col"],
                   style["post-description"],
                 ].join(" ")}
               >
-                <h4 className="leading-none">website redesign</h4>
+                <h4 className="leading-none">website redesign | {post.title} </h4>
                 <p>-</p>
                 {/* <span>-</span> */}
-                <p className={style["post-description"]}>
+                <h1 className={style["post-description"]}>
                   {post.projectDescription}
-                </p>
+                </h1>
               </div>
             </section>
 
@@ -87,24 +86,24 @@ export default function Post({ post, morePosts, preview }) {
               <BackButton href="/#expertises" />
 
               <div className={style["post-title-wrapper"]}>
-                <h1>{post.title}</h1>
+                <h3>{post.title}</h3>
               </div>
 
               <div
                 className={[
-                  [""],
+                  ["mt-auto"],
                   style["post-description"],
                   style["slug-header-grid"],
                   style["post-description-desktop-container"],
                 ].join(" ")}
               >
                 <div>
-                  <h4 className="leading-none">Website Redesign</h4>
+                  <h4 className="leading-none">Website Redesign | {post.title}</h4>
                   <p>-</p>
                 </div>
-                <p className={style["post-description"]}>
+                <h1 className={style["post-description"]}>
                   {post.projectDescription}
-                </p>
+                </h1>
               </div>
 
               <div
@@ -186,15 +185,18 @@ export default function Post({ post, morePosts, preview }) {
               </div>
             </div>
 
-            <section>
+            <section
+              id="process"
+              className={[
+                style["post-body-container"],
+                ["product"],
+              ].join(" ")}
+            >
+              {" "}
               {/* <h2 id="" className="leading-none">
                 process.
               </h2> */}
-              <PostBody
-                title={"process"}
-                id={"process"}
-                content={post.content}
-              />
+              <PostBody title={"process"} content={post.content} />
             </section>
           </article>
           <section

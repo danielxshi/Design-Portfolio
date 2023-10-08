@@ -4,7 +4,7 @@ import { AnimationConfig } from "./AnimationConfig";
 import Link from "next/link";
 
 const ArrowLeftIcon = ({ isHovering }) => (
-  <div className="w-[1em] h-[1em] overflow-hidden rotate-180">
+  <div className="w-fit h-fit overflow-hidden rotate-180">
     <motion.div
       className="flex flex-row"
       transition={{

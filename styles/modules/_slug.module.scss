@@ -1,4 +1,9 @@
 @import "../_variables.scss";
+
+.post-body-container {
+  padding: $grid-container-padding;
+}
+
 .article-container,
 .post-body-container {
   h2 {
@@ -7,24 +12,29 @@
 }
 
 .slug-header-mobile {
-  min-height: 100svh;
-  * {z-index: 1}
+  min-height: 80svh;
+  * {
+    z-index: 1;
+  }
 }
 
 .slug-header-desktop {
   display: none;
   min-height: 60svh;
- * {
-  z-index: 1;
- }
+  * {
+    z-index: 1;
+  }
 }
 
-.slug-header-grid{
+.slug-header-grid {
   display: grid;
-
 }
 
-.slug-post-description-desktop{
+.post-description h1{
+  width: 14ch;
+}
+
+.slug-post-description-desktop {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(8, 1fr);
@@ -32,7 +42,7 @@
   margin-top: 6rem;
 }
 
-.post-description-desktop-container{
+.post-description-desktop-container {
   grid-column-start: 2;
   grid-column-end: 7;
   margin-top: auto;
@@ -47,18 +57,16 @@
   .post-description {
     grid-column-start: 1;
     grid-column-end: -1;
-    font-family: Gestura Display TRIAL;
-    font-style: normal;
-    font-size: 2rem;
-    line-height: 150%;
-    letter-spacing: -0.8px;
   }
 }
 .post-title-wrapper {
+  align-items: center;
+  display: flex;
+  height: 2rem;
   grid-column-start: 2;
   grid-column-end: -1;
   > :first-child {
-    margin-bottom: $sm-margin;
+    // margin-bottom: $sm-margin;
     h1 {
       line-height: 100%;
       margin-left: $xs-margin;
@@ -102,13 +110,13 @@
 }
 
 // slug nav
-.slug-nav-header{
+.slug-nav-header {
   line-height: 100%;
 }
 
 @media (min-width: 768px) {
   // slug nav
-  .slug-nav{
+  .slug-nav {
     grid-column-start: 2 !important;
     grid-column-end: 3 !important;
     ul {
@@ -116,19 +124,22 @@
       flex-direction: column;
     }
   }
-  .project-overview{
+  .project-overview {
     display: grid;
     * {
       grid-column-start: 3;
       grid-column-end: 7;
     }
   }
-  .slug-header-desktop{
+  .slug-header-desktop {
     display: grid;
   }
 }
 
 @media (min-width: 1024px) {
+  .post-description h1 {
+    width: 20ch;
+  }
   //   .project-details {
   //     display: flex;
   //     grid-column-start: 1;

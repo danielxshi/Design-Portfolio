@@ -2,21 +2,22 @@
 
 // This font library is based off of the golden ratio
 
-$sm-font: 0.9rem; // footer ?? |  base ÷ 1.65 | smaller than base
+$sm-font: 0.9rem; // footer ?? |  base ÷ 1.6 | smaller than base
 $base-font: 1.2rem; // p | 17px
-$med-font: $base-font * 1.65; // h3 | base * 1.65
-// $lrg-font: $base-font * (1.65 * 1.65); // h2 | h3 * 1.65
-// $xl-font: $base-font * (1.65 * 1.65 * 1.65); // h1 | h2 * 1.65
+$med-font: $base-font * 1.6; // h3 | base * 1.6
+$lrg-font: $base-font * (1.6 * 1.6); // h2 | h3 * 1.6
+$xl-font: $base-font * (1.6 * 1.6 * 1.6); // h1 | h2 * 1.6
 
 h1 {
   font-family: Gestura Headline TRIAL;
   font-style: normal;
-  font-size: $med-font;
+  font-size: $lrg-font;
   letter-spacing: -0.8px;
+  text-transform: uppercase;
+  line-height: 125%;
 }
 
 h2 {
-  // font-size: $lrg-font;
   font-family: Gestura Headline TRIAL;
   font-style: normal;
   font-size: $med-font;
@@ -32,12 +33,19 @@ h4 {
   font-size: $base-font;
 }
 
+.display-lead {
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: $base-font;
+  font-style: normal;
+  font-weight: 330;
+  line-height: 150%; /* 36px */
+  letter-spacing: 0.48px;
+}
+
 p {
   font-style: light;
   font-weight: 500;
   font-size: $base-font;
-  // line-height: 1.5rem;
-  // letter-spacing: -0.48px;
 }
 
 a {
@@ -50,10 +58,6 @@ a {
   * {
     
     font-size: $base-font !important;
-  }
-  h4 {
-
-  color: black;
   }
 }
 
@@ -96,97 +100,27 @@ em {
 // end of footer
 
 @media (min-width: 1280px) {
-  $sm-font: 1.1rem; // footer ?? |  base ÷ 1.65 | smaller than base
+  $sm-font: 1.1rem; // footer ?? |  base ÷ 1.6 | smaller than base
   $base-font: 1.3rem; // p | 17px
-  $med-font: $base-font * 1.65; // h3 | base * 1.65
-  $lrg-font: $base-font * (1.65 * 1.65); // h2 | h3 * 1.65
-  $xl-font: $base-font * (1.65 * 1.65 * 1.65); // h1 | h2 * 1.65
-
+  $med-font: $base-font * 1.6; // h3 | base * 1.6
+  $lrg-font: $base-font * (1.6 * 1.6); // h2 | h3 * 1.6
+  $xl-font: $base-font * (1.6 * 1.6 * 1.6); // h1 | h2 * 1.6
+  h1 {
+    font-size: $xl-font;
+  }
+  h2 {
+    font-size: $lrg-font;
+  }
+  h3 {
+    font-size: $med-font;
+  }
   a {
     font-size: $base-font;
   }
 
-  // footer
-  .footer-container {
-    // a {
-    //   font-size: 1.5rem;
-    //   line-height: 150%;
-    // }
-    // h5,
-    // span {
-    //   color: var(--Text-Color, #474747);
-    //   font-family: "brandon-grotesque", sans-serif;
-    //   font-size: 1.5rem;
-
-    //   font-style: normal;
-    //   font-weight: 700;
-    //   letter-spacing: -0.05rem;
-    // }
-    // ul h5 {
-    //   margin-bottom: $sm-margin;
-    // }
-  }
-  // end of footer
-
-  h1 {
-    // color: #474747;
-    // font-size: 3rem;
-    // font-family: Gestura Display TRIAL;
-    // font-style: normal;
-    // line-height: 4.5rem;
-    // letter-spacing: -2.1px;
-  }
-
-  p {
-    // font-size: 1.5rem;
-    // line-height: 2.25rem;
-  }
-
-  .landing-container {
-    // padding-bottom: 2 * $sm-margin;
-  }
 }
 
 // Largest Media Query
 @media (min-width: 1536px) {
-  // .post-preview {
-  //   * {
-  //     margin-bottom: $sm-margin;
-  //   }
-  //   h3 {
-  //     color: var(--Text-Color, #474747);
-  //     font-family: Gestura Headline TRIAL;
-  //     font-size: 1.5rem;
-  //     font-style: normal;
-  //     font-weight: 400;
-  //     line-height: 150%; /* 24px */
-  //     letter-spacing: -0.64px;
-  //   }
-  // }
-  // h1 {
-  //   color: #474747;
-  //   font-size: 3rem;
-  //   font-family: Gestura Display TRIAL;
-  //   font-style: normal;
-  //   line-height: 4.5rem;
-  //   letter-spacing: -2.1px;
-  // }
-
-  // p {
-  //   font-size: 1.5rem;
-  //   line-height: 2.25rem;
-  // }
-
-  // a {
-  //   color: #000;
-  //   font-size: 1.5rem;
-  //   font-style: normal;
-  //   font-weight: 400;
-  //   line-height: 150%; /* 36px */
-  //   letter-spacing: -1.2px;
-  // }
-
-  // .landing-container {
-  //   padding-bottom: 2 * $sm-margin;
-  // }
+ 
 }

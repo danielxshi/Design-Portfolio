@@ -68,7 +68,7 @@ export const renderSwitch = (params) => {
           <ul>
             {test2.map((item, index) => (
               <>
-                <li >
+                <li>
                   <Link href={item["url"]}>{item["link"]}</Link>
                 </li>
               </>
@@ -79,7 +79,6 @@ export const renderSwitch = (params) => {
     default:
       return (
         <>
-          
           {JSON.stringify(params)}
           <br></br>
           {keys[0]}
@@ -102,13 +101,11 @@ export default function Footer() {
           <div className="wrapper">
             <div className="marquee">
               <span>
-                
-                uxui design, front-end design, web design, visual design,
+                {" "}uxui design, front-end design, web design, visual design,
                 videography, photography, product design,
               </span>
               <span>
-                
-                uxui design, front-end design, web design, visual design,
+                {" "}uxui design, front-end design, web design, visual design,
                 videography, photography, product design,
               </span>
             </div>

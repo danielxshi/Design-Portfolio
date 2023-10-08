@@ -3,11 +3,10 @@ import Contact from "./contact";
 
 export default function Intro() {
   return (
-    <section className="intro-container flex-col flex">
-      <div>
+    <section className="intro-container">
+      <div className="col-span-4">
         <h1>
-          <em>Daniel Shi</em> - a visual designer crafting
-          for the past seven years from university to freelance to businesses.
+          THE HUB FOR MY CASE STUDIES
         </h1>
       </div>
     </section>

@@ -17,7 +17,7 @@ const customMarkdownOptions = (content) => ({
 
 export default function PostBody({ id, content }) {
   return (
-    <section id={id} className={[["container max-w-2xl mx-auto"], style["post-body-container"]].join(" ")}>
+    <section id={id} className={[["col-span-full container max-w-2xl mx-auto"]].join(" ")}>
       <h2>process.</h2>
       <div className={markdownStyles['markdown']}>
         {documentToReactComponents(
