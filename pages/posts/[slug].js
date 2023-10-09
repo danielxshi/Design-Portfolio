@@ -12,6 +12,7 @@ import BackButton from "../../components/Button/BackButton";
 import ImageHolder from "../../components/imageholder";
 import SlugNav from "../../components/Navigation/slug-side-nav";
 import ContentfulHeaderImage from "../../components/Image/contentful-header-image";
+import SectionSeparator from "../../components/section-separator";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
@@ -188,7 +189,7 @@ export default function Post({ post, morePosts, preview }) {
                 </div>
               </div>
             </div>
-
+            <SectionSeparator />
             <section
               id="process"
               className={[style["post-body-container"], ["product"]].join(" ")}
@@ -200,7 +201,13 @@ export default function Post({ post, morePosts, preview }) {
               <PostBody title={"process"} content={post.content} />
             </section>
           </article>{" "}
-          <div className="container max-w-2xl mx-auto">
+          <SectionSeparator />
+          <div
+            className={[
+              style["post-body-container"],
+              [" max-w-2xl mx-auto"],
+            ].join(" ")}
+          >
             <h2 className="leading-none">wireframes.</h2>{" "}
           </div>
           <section
@@ -222,9 +229,11 @@ export default function Post({ post, morePosts, preview }) {
             </div>
           </section>
           {/* <CoverImage title={title} url={coverImage.url} /> */}
+          <SectionSeparator />
           <section id="conclusion" className="container max-w-2xl mx-auto">
             <h2 className="leading-none">conclusion.</h2>
           </section>
+          <SectionSeparator />
           <section
             className={[
               ["max-w-2xl mx-auto container]"],

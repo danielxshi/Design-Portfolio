@@ -36,7 +36,8 @@ body {
 }
 
 .dark-mode {
-  background-color: black !important;
+  //   background-color: black !important;
+  background-color: rgb(14, 14, 14) !important;
   * {
     color: white !important;
   }
@@ -258,7 +259,7 @@ a {
 
 .back-button {
   margin-left: -1em;
-  a{
+  a {
     width: fit-content;
   }
 }
