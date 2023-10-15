@@ -25,6 +25,7 @@
 .slug-header-desktop {
   display: none;
   min-height: 60svh;
+  padding-top: 6rem;
   * {
     z-index: 1;
   }
@@ -213,7 +214,7 @@
     }
   }
   .post-description {
-    grid-column-start: 2 !important;
+    grid-column-start: 1 !important;
   }
   .project-overview {
     div:first-child {
@@ -297,9 +298,10 @@
     width: 100vw;
     div {
       display: inline-block;
-      margin: 0 1rem 0 1rem;
+      // margin: 0 1rem 0 1rem;
       flex-grow: 1;
-      width: calc(100% * (1 / 3) - 10px - 2rem);
+      // width: calc(100% * (1 / 2) - 2rem);
+      width: 50%;
     }
     img {
       width: 1080px;

@@ -7,12 +7,14 @@ import Layout from "../../components/layout";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
 import style from "../../styles/modules/_slug.module.scss";
-import BackButton from "../../components/Button/BackButton";
-// !Testing CoverImage
 import ImageHolder from "../../components/imageholder";
-import SlugNav from "../../components/Navigation/slug-side-nav";
 import ContentfulHeaderImage from "../../components/Image/contentful-header-image";
 import SectionSeparator from "../../components/section-separator";
+import SlugNav from "../../components/Navigation/slug-nav";
+import ScrollTop from "../../components/Button/ScrollToTop";
+import { ContactModal } from "../../components/project-info-modal";
+
+import React, { useState } from "react";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
@@ -21,14 +23,12 @@ export default function Post({ post, morePosts, preview }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  // const bgStyling = {
-  //   backgroundImage: `url('${post.headerImage.url}')`,
-  //   width: "100%",
-  //   height: "100%",
-  //   backgroundPosition: "center right",
-  //   backgroundSize: "cover",
-  //   backgroundRepeat: "no-repeat",
-  // };
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
+
   return (
     <Layout preview={preview}>
       {/* <Header /> */}
@@ -36,12 +36,14 @@ export default function Post({ post, morePosts, preview }) {
         <PostTitle>Loading…</PostTitle>
       ) : (
         <>
+          <ContactModal showModal={showModal} setShowModal={setShowModal} />
           <article className={style["article-container"]}>
             <Head>
               <title>{`${post.title} | DANIEL'S PORTFOLIO `}</title>
               <meta property="og:image" content={post.coverImage.url} />
             </Head>
-
+            <SlugNav onClick={openModal} />
+            <ScrollTop />
             {/* mobile */}
             <section
               className={[
@@ -49,26 +51,15 @@ export default function Post({ post, morePosts, preview }) {
                 style["slug-header"],
                 style["slug-header-mobile"],
               ].join(" ")}
-              // style={bgStyling}
             >
               <ContentfulHeaderImage url={post.headerImage.url} />
-              {/* Header */}
-              <BackButton href="/#expertises" />
 
-              {/* <div className={[[""], style["post-title-wrapper"]].join(" ")}>
-                <h3 className="">{post.title}</h3>
-              </div> */}
-              <div
-                className={[
-                  // ["col-start-1 col-end-auto mb-0 mt-auto flex flex-col"],
-                  style["post-description"],
-                ].join(" ")}
-              >
+              <div className={[style["post-description"]].join(" ")}>
                 <h4 className="leading-none">
                   website redesign | {post.title}{" "}
                 </h4>
                 <p>-</p>
-                {/* <span>-</span> */}
+
                 <h1 className={style["post-description"]}>
                   {post.projectDescription}
                 </h1>
@@ -82,15 +73,8 @@ export default function Post({ post, morePosts, preview }) {
                 style["slug-header"],
                 style["slug-header-desktop"],
               ].join(" ")}
-              // style={bgStyling}
             >
               <ContentfulHeaderImage url={post.headerImage.url} />
-              {/* Header */}
-              <BackButton href="/#expertises" />
-
-              <div className={style["post-title-wrapper"]}>
-                <h3>{post.title}</h3>
-              </div>
 
               <div
                 className={[
@@ -162,14 +146,14 @@ export default function Post({ post, morePosts, preview }) {
             </div>
 
             {/* Project Overview */}
-            <div
+            {/* <div
               className={[
                 style["project-overview"],
                 ["grid-container"],
                 [""],
               ].join(" ")}
             >
-              {/* Subnav */}
+
               <SlugNav title={post.title} />
               <div className="container max-w-2xl mx-auto">
                 <h2 id="overview" className={[style["slug-h2"]]}>
@@ -188,28 +172,23 @@ export default function Post({ post, morePosts, preview }) {
                   <p>{post.solution}</p>
                 </div>
               </div>
-            </div>
-            <SectionSeparator />
-            <section
+            </div> */}
+
+            {/* <section
               id="process"
               className={[style["post-body-container"], ["product"]].join(" ")}
             >
-              {" "}
-              {/* <h2 id="" className="leading-none">
-                process.
-              </h2> */}
               <PostBody title={"process"} content={post.content} />
-            </section>
-          </article>{" "}
+            </section> */}
+          </article>
+
           <SectionSeparator />
           <div
             className={[
               style["post-body-container"],
               [" max-w-2xl mx-auto"],
             ].join(" ")}
-          >
-            <h2 className="leading-none">wireframes.</h2>{" "}
-          </div>
+          ></div>
           <section
             id="wireframes"
             className={[
@@ -227,23 +206,6 @@ export default function Post({ post, morePosts, preview }) {
               <ImageHolder title={post.title} url={post.wireframe7.url} />
               <ImageHolder title={post.title} url={post.wireframe8.url} />
             </div>
-          </section>
-          {/* <CoverImage title={title} url={coverImage.url} /> */}
-          <SectionSeparator />
-          <section id="conclusion" className="container max-w-2xl mx-auto">
-            <h2 className="leading-none">conclusion.</h2>
-          </section>
-          <SectionSeparator />
-          <section
-            className={[
-              ["max-w-2xl mx-auto container]"],
-              style["post-body-container"],
-            ].join(" ")}
-          >
-            <h2 className="pt-32 mb-8">more projects.</h2>
-            {morePosts && morePosts.length > 0 && (
-              <MoreStories posts={morePosts} />
-            )}
           </section>
         </>
       )}

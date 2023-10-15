@@ -44,17 +44,11 @@ const BackButton = ({ href = "#" }) => {
   return (
     <Link
       href={href}
-      className="reset-link inline-block"
+      className="reset-link inline-block w-fit h-fit"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {/* <a
-        className="reset-link inline-block"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-      > */}
       <ArrowLeftIcon isHovering={isHovering} />
-      {/* </a> */}
     </Link>
   );
 };
