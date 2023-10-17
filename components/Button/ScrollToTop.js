@@ -27,7 +27,7 @@ const ScrollToTop = () => {
             width="24"
             height="24"
             fill="currentColor"
-            class="bi bi-chevron-double-up"
+            className="bi bi-chevron-double-up"
             viewBox="0 0 16 16"
           >
             <path

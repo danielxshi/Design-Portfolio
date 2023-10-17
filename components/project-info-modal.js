@@ -1,131 +1,58 @@
-import React, { useRef, useEffect, useCallback } from "react";
+import React, {
+  useRef,
+  useEffect,
+  useCallback,
+  Children,
+  useState,
+} from "react";
 import { useSpring, animated as a } from "react-spring";
 import styled from "styled-components";
-// import { MdClose } from 'react-icons/md';
-// import GIT from '../images/icons/github-logo.svg';
-// import IG from '../images/icons/instagram.svg';
-// import LinkedIn from '../images/icons/linkedin.svg';
+import PostBody from "./post-body";
+import { MdClose } from "react-icons/md";
+import NextButton from "./Button/NextButton";
+import BackButton from "./Button/BackButton";
+import { debounce } from "../util/helpers";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+// import SlugContent from "../components/slug-content";
 
 const Background = styled.div`
   width: 100vw;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 1);
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 15;
+  height: -webkit-fit-content;
 `;
 
 const ModalWrapper = styled.div`
-  width: 80vw;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background: #000;
   color: #fff;
   grid-template-columns: 1fr 1fr;
   position: relative;
   z-index: 15;
   border-radius: 3px;
+  overflow-y: scroll;
 `;
 
-const ModalContent = styled.div`
-  overflowY: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 1.8;
-  color: #141414;
-  width: 100%;
-  height: 100%;
-
-  p {
-    margin-bottom: 1rem;
-  }
-
-  h1{
-      margin: auto;
-      position: absolute;
-      
-  }
-
-  button {
-    padding: 10px 24px;
-    background: #000;
-    color: #fff;
-    border: none;
-  }
-  ul li a{
-    margin: 0 .5rem;
-  }
-  h1{
-    a{
-      color: black;
-    }
-    a:hover{
-      color: black;
-    }
-  }
-  a {
-
-    display: inline-block;
-    padding: 15px 20px;
-    position: relative;
-  }
-  a:after{
-    transition: 0.25s ease-in-out;       
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: #4d9735;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
-  a:hover:after{
-    width: 100%; 
-    left: 0; 
-  }
-
-
-  .social-media-wrapper{
-    margin: auto;
-    margin-bottom: 0;
-    p {
-      text-align: center;
-      letter-spacing: 2.5px;
-      user-select: none; 
-    }
-  }
-
-  ul{
-    margin: auto;
-    margin-bottom: 3rem;
+const CloseModalButton = styled(MdClose)`
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 15;
 `;
 
-// const CloseModalButton = styled(MdClose)`
-//   cursor: pointer;
-//   position: absolute;
-//   top: 20px;
-//   right: 20px;
-//   width: 32px;
-//   height: 32px;
-//   padding: 0;
-//   z-index: 15;
-// `;
-
-export const ContactModal = ({ showModal, setShowModal }) => {
+export const InfoModal = ({ showModal, setShowModal, content }) => {
   const modalRef = useRef();
-
   const animation = useSpring({
     config: {
       duration: 250,
     },
-
     opacity: showModal ? 1 : 0,
     transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
   });
@@ -151,27 +78,117 @@ export const ContactModal = ({ showModal, setShowModal }) => {
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
+  const divRef = useRef(null);
+
+  const scrollToTop = () => {
+    console.log("scroll" + divRef.current.scrollTop);
+    if (divRef.current.scrollTop > 0) {
+      console.log("this should hide");
+      setHidden(true);
+    }
+    divRef.current.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+
+
+
+  // Scroll Ex 1
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    console.log(latest);
+    // const previous = scrollY.getPrevious();
+    const previous = divRef.current.scrollTop;
+    if (latest > previous && latest > 0) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
+
+  // End of Ex 1
+
+  // Adding Event Listener
+//   targetElement.onscroll = (event) => {
+
+// };
+// const [scrollTop, setScrollTop] = useState(0);
+
+// useEffect(() => {
+//   const handleScroll = (event) => {
+//     setScrollTop(window.scrollY);
+//   };
+
+//   window.addEventListener('scroll', handleScroll);
+
+//   return () => {
+//     window.removeEventListener('scroll', handleScroll);
+//   };
+// }, []);
+
+
+
+  
+
   return (
     <>
+    
       {showModal ? (
-        <Background onClick={closeModal} ref={modalRef}>
-          <a.div style={animation}>
-            <ModalWrapper showModal={showModal}>
-              <ModalContent>
-                <h1 className="modal-address">
-                  <a
-                    className="secondary-cta"
-                    href="mailto:danielxshi@hotmail.com"
+        <Background
+          // onScroll={onScroll}
+          className="flex"
+          onClick={closeModal}
+          ref={modalRef}
+        >
+          <header>
+            <motion.nav
+              variants={{
+                visible: { y: 0 },
+                hidden: { y: "-100%" },
+              }}
+              animate={hidden ? "hidden" : "visible"}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              className="grid-container items-center"
+            >
+              <div className="col-span-1 col-start-1 back-button-container">
+                <CloseModalButton
+                  aria-label="Close modal"
+                  onClick={() => setShowModal((prev) => !prev)}
+                />
+              </div>
+              <div className="col-end-9 flex text-cta-wrapper">
+                <p className="mr-3">Next</p>
+                <div className="text-cta">
+                  <div
+                    className="w-[1em] h-[1em] rounded-full"
+                    style={{ backgroundColor: "tomato" }}
+                  ></div>
+                  <button
+                    onClick={() => {
+                      this.props.onClick();
+                      this.handleClick();
+                    }}
                   >
-                    danielxshi@hotmail.com
-                  </a>
-                </h1>
-                <div className="social-media-wrapper"></div>
-                {/* <CloseModalButton
-                  aria-label='Close modal'
-                  onClick={() => setShowModal(prev => !prev)}
-                /> */}
-              </ModalContent>
+                    Project Information
+                  </button>
+
+                  <button type="button" onClick={() => scrollToTop()}>
+                    Scroll to Top
+                  </button>
+                </div>
+              </div>
+            </motion.nav>
+          </header>
+
+          <a.div className="slug-modal-wrapper" style={animation}>
+            <ModalWrapper onScroll={console.log("ok")} ref={divRef}>
+              <PostBody content={content} />
+              {/* <SlugContent/> */}
             </ModalWrapper>
           </a.div>
         </Background>
