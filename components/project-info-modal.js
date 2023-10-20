@@ -5,6 +5,8 @@ import React, {
   Children,
   useState,
 } from "react";
+import ReactDom from "react-dom";
+import useEventListener from "@use-it/event-listener";
 import { useSpring, animated as a } from "react-spring";
 import styled from "styled-components";
 import PostBody from "./post-body";
@@ -12,8 +14,12 @@ import { MdClose } from "react-icons/md";
 import NextButton from "./Button/NextButton";
 import BackButton from "./Button/BackButton";
 import { debounce } from "../util/helpers";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-// import SlugContent from "../components/slug-content";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  AnimatePresence,
+} from "framer-motion";
 
 const Background = styled.div`
   width: 100vw;
@@ -47,14 +53,14 @@ const CloseModalButton = styled(MdClose)`
   z-index: 15;
 `;
 
-export const InfoModal = ({ showModal, setShowModal, content }) => {
+export const InfoModal = ({ showModal, setShowModal, content, morePosts }) => {
   const modalRef = useRef();
   const animation = useSpring({
     config: {
       duration: 250,
     },
     opacity: showModal ? 1 : 0,
-    transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
+    transform: showModal ? `translateY(0%)` : `translateY(100%)`,
   });
 
   const closeModal = (e) => {
@@ -78,121 +84,120 @@ export const InfoModal = ({ showModal, setShowModal, content }) => {
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
-  const divRef = useRef(null);
-
-  const scrollToTop = () => {
-    console.log("scroll" + divRef.current.scrollTop);
-    if (divRef.current.scrollTop > 0) {
-      console.log("this should hide");
-      setHidden(true);
-    }
-    divRef.current.scroll({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-
-
-
   // Scroll Ex 1
-  const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log(latest);
-    // const previous = scrollY.getPrevious();
-    const previous = divRef.current.scrollTop;
-    if (latest > previous && latest > 0) {
+  const [pos, setPos] = useState(0);
+
+  const [element, setElement] = useState(null);
+  useEventListener("scroll", (ev) => setPos(ev.target.scrollTop), element);
+
+  useEffect(() => {
+    console.log(pos + "test");
+    // var posTest = 0;
+    if (pos > 0) {
+      // console.log((ev) => setPos(ev.target.scrollTop) + "this should hide");
       setHidden(true);
-    } else {
+    }
+    if (pos <= 1) {
+      console.log("yo");
       setHidden(false);
     }
+    // if (posTest < pos) {
+    //   setHidden(false);
+    // }
+    // posTest = pos;
   });
-
-
-  // End of Ex 1
-
-  // Adding Event Listener
-//   targetElement.onscroll = (event) => {
-
-// };
-// const [scrollTop, setScrollTop] = useState(0);
-
-// useEffect(() => {
-//   const handleScroll = (event) => {
-//     setScrollTop(window.scrollY);
-//   };
-
-//   window.addEventListener('scroll', handleScroll);
-
-//   return () => {
-//     window.removeEventListener('scroll', handleScroll);
-//   };
-// }, []);
-
-
-
-  
 
   return (
     <>
-    
-      {showModal ? (
-        <Background
-          // onScroll={onScroll}
-          className="flex"
-          onClick={closeModal}
-          ref={modalRef}
-        >
-          <header>
-            <motion.nav
-              variants={{
-                visible: { y: 0 },
-                hidden: { y: "-100%" },
-              }}
-              animate={hidden ? "hidden" : "visible"}
-              transition={{ duration: 0.35, ease: "easeInOut" }}
-              className="grid-container items-center"
+      <AnimatePresence>
+        {showModal ? (
+          <motion.div
+            ref={modalRef}
+            initial={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+          >
+            <Background
+              // onScroll={onScroll}
+              className="flex"
+              // onClick={closeModal}
+              // ref={modalRef}
             >
-              <div className="col-span-1 col-start-1 back-button-container">
-                <CloseModalButton
-                  aria-label="Close modal"
-                  onClick={() => setShowModal((prev) => !prev)}
-                />
-              </div>
-              <div className="col-end-9 flex text-cta-wrapper">
-                <p className="mr-3">Next</p>
-                <div className="text-cta">
-                  <div
-                    className="w-[1em] h-[1em] rounded-full"
-                    style={{ backgroundColor: "tomato" }}
-                  ></div>
-                  <button
-                    onClick={() => {
-                      this.props.onClick();
-                      this.handleClick();
+              <header>
+                <motion.nav
+                  variants={{
+                    visible: { y: 0 },
+                    hidden: { y: "-100%" },
+                  }}
+                  animate={hidden ? "hidden" : "visible"}
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  className="grid-container items-center"
+                >
+                  <div className="col-span-1 col-start-1 back-button-container">
+                    <CloseModalButton
+                      aria-label="Close modal"
+                      onClick={() => setShowModal((prev) => !prev)}
+                    />
+                  </div>
+                  {/* <NextButton posts={morePosts.morePosts}/> */}
+
+                  {morePosts && morePosts.length > 0 && (
+                    <NextButton posts={morePosts} />
+                  )}
+                </motion.nav>
+              </header>
+
+              <a.div
+                // variants={{
+                //   visible: { y: 0 },
+                //   hidden: { y: "-100%" },
+                // }}
+                // animate={hidden ? "hidden" : "visible"}
+                // transition={{ duration: 0.35, ease: "easeInOut" }}
+
+                className="slug-modal-wrapper"
+                style={animation}
+              >
+                <ModalWrapper ref={(el) => setElement(el)}>
+                  <motion.div
+                    className="slug-animate-container mt-5 grid-container"
+                    animate={hidden ? "hidden" : "visible"}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    variants={{
+                      visible: { scale: 0.95 },
+                      hidden: { scale: 1 },
                     }}
                   >
-                    Project Information
-                  </button>
-
-                  <button type="button" onClick={() => scrollToTop()}>
-                    Scroll to Top
-                  </button>
-                </div>
-              </div>
-            </motion.nav>
-          </header>
-
-          <a.div className="slug-modal-wrapper" style={animation}>
-            <ModalWrapper onScroll={console.log("ok")} ref={divRef}>
-              <PostBody content={content} />
-              {/* <SlugContent/> */}
-            </ModalWrapper>
-          </a.div>
-        </Background>
-      ) : null}
+                    <PostBody content={content} />
+                  </motion.div>
+                </ModalWrapper>
+              </a.div>
+            </Background>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </>
   );
 };
+
+export async function getStaticProps({ params, preview = false }) {
+  const data = await getPostAndMorePosts(params.slug, preview);
+
+  return {
+    props: {
+      preview,
+      post: data?.post ?? null,
+      morePosts: data?.morePosts ?? null,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const allPosts = await getAllPostsWithSlug();
+  return {
+    paths: allPosts?.map(({ slug }) => `/posts/${slug}`) ?? [],
+    fallback: true,
+  };
+}
