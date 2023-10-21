@@ -162,9 +162,8 @@ export const InfoModal = ({ showModal, setShowModal, content, morePosts }) => {
               >
                 <ModalWrapper ref={(el) => setElement(el)}>
                   <motion.div
-                    className="slug-animate-container mt-5 grid-container"
+                    className="slug-animate-container"
                     animate={hidden ? "hidden" : "visible"}
-                    transition={{ duration: 0.35, ease: "easeInOut" }}
                     variants={{
                       visible: { scale: 0.95 },
                       hidden: { scale: 1 },
