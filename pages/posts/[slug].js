@@ -33,8 +33,6 @@ export default function Post({ post, morePosts, preview }) {
     setShowModal((prev) => !prev);
   };
 
-  // useEffect()
-
   return (
     <AnimatePresence>
       <Layout preview={preview}>
@@ -49,103 +47,73 @@ export default function Post({ post, morePosts, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            {/* {showModal ? (
-              null
-            ) : ( */}
-              <article className={[style["article-container"]].join(" ")}>
-                <Head>
-                  <title>{`${post.title} | DANIEL'S PORTFOLIO `}</title>
-                  <meta property="og:image" content={post.coverImage.url} />
-                </Head>
-                <SlugNav onClick={openModal} />
-                <ScrollTop />
+            <article className={[style["article-container"]].join(" ")}>
+              <Head>
+                <title>{`${post.title} | DANIEL'S PORTFOLIO `}</title>
+                <meta property="og:image" content={post.coverImage.url} />
+              </Head>
+              <SlugNav onClick={openModal} />
+              <ScrollTop />
 
-                {/* mobile */}
-                <section
-                  className={[
-                    ["grid-container mobile-display-only relative"],
-                    style["slug-header"],
-                    style["slug-header-mobile"],
-                  ].join(" ")}
-                >
-                  {/* <ContentfulHeaderImage url={post.headerImage.url} /> */}
+              {/* mobile */}
+              <section
+                className={[
+                  ["grid-container mobile-display-only relative"],
+                  style["slug-header"],
+                  style["slug-header-mobile"],
+                ].join(" ")}
+              >
+                {/* <ContentfulHeaderImage url={post.headerImage.url} /> */}
 
-                  <div className={[style["post-description"]].join(" ")}>
-                    <h4 className="leading-none">
-                      website redesign | {post.title}{" "}
-                    </h4>
-                    <p>-</p>
+                <div className={[style["post-description"]].join(" ")}>
+                  <h4 className="leading-none">
+                    website redesign | {post.title}{" "}
+                  </h4>
+                  <p>-</p>
 
-                    <h1 className={style["post-description"]}>
-                      {post.projectDescription}
-                    </h1>
-                  </div>
-                </section>
+                  <h1 className={style["post-description"]}>
+                    {post.projectDescription}
+                  </h1>
+                </div>
+              </section>
 
-                {/* deesktop */}
-                <section
-                  className={[
-                    ["grid-container relative"],
-                    style["slug-header"],
-                    style["slug-header-desktop"],
-                  ].join(" ")}
-                >
-                  {/* <ContentfulHeaderImage url={post.headerImage.url} /> */}
+              {/* deesktop */}
+              <section
+                className={[
+                  ["grid-container relative"],
+                  style["slug-header"],
+                  style["slug-header-desktop"],
+                ].join(" ")}
+              >
+                {/* <ContentfulHeaderImage url={post.headerImage.url} /> */}
 
-                  <div
-                    className={[
-                      ["mt-auto"],
-                      style["post-description"],
-                      style["slug-header-grid"],
-                      style["post-description-desktop-container"],
-                    ].join(" ")}
-                  >
-                    <div>
-                      <h4 className="leading-none">
-                        Website Redesign | {post.title}
-                      </h4>
-                      <p>-</p>
-                    </div>
-                    <h1 className={style["post-description"]}>
-                      {post.projectDescription}
-                    </h1>
-                  </div>
-
-                  <div
-                    className={[
-                      ["mt-auto mb-0 "],
-                      style["project-details-desktop"],
-                      style["project-details"],
-                    ].join(" ")}
-                  >
-                    <ul>
-                      <li>
-                        <h4>Role</h4>
-                        <p>{post.role}</p>
-                      </li>
-                      <li>
-                        <h4>Team</h4>
-                        <p>{post.team}</p>
-                      </li>
-                      <li>
-                        <h4>Website</h4>
-                        <p>{post.website}</p>
-                      </li>
-                    </ul>
-                  </div>
-                </section>
-
-                {/* Project Header */}
-
-                {/* Project Details */}
                 <div
                   className={[
-                    ["mobile-display-only"],
-                    style["project-details"],
-                    [" grid-container"],
+                    ["mt-auto"],
+                    style["post-description"],
+                    style["slug-header-grid"],
+                    style["post-description-desktop-container"],
                   ].join(" ")}
                 >
-                  <ul className="container max-w-2xl mx-auto col-span-full">
+                  <div>
+                    <h4 className="leading-none">
+                      Website Redesign | {post.title}
+                    </h4>
+                    <p>-</p>
+                  </div>
+                  <h1 className={style["post-description"]}>
+                    {post.projectDescription}
+                  </h1>
+                </div>
+
+                <div
+                  className={[
+                    ["mt-auto mb-0 "],
+                    style["project-details-desktop"],
+                    style["project-details"],
+                  ].join(" ")}
+                >
+                  <ul>
                     <li>
                       <h4>Role</h4>
                       <p>{post.role}</p>
@@ -160,29 +128,55 @@ export default function Post({ post, morePosts, preview }) {
                     </li>
                   </ul>
                 </div>
+              </section>
 
-                <SectionSeparator />
-                <section
-                  id="wireframes"
-                  className={[
-                    style["post-body-container"],
-                    style["slug-final-product"],
-                  ].join(" ")}
-                >
-                  <motion.div
-                  >
-                    <ImageHolder title={post.title} url={post.wireframe1.url} />
-                    <ImageHolder title={post.title} url={post.wireframe2.url} />
-                    <ImageHolder title={post.title} url={post.wireframe3.url} />
-                    <ImageHolder title={post.title} url={post.wireframe4.url} />
-                    <ImageHolder title={post.title} url={post.wireframe5.url} />
-                    <ImageHolder title={post.title} url={post.wireframe6.url} />
-                    <ImageHolder title={post.title} url={post.wireframe7.url} />
-                    <ImageHolder title={post.title} url={post.wireframe8.url} />
-                  </motion.div>
-                </section>
-              </article>
-            {/* )} */}
+              {/* Project Header */}
+
+              {/* Project Details */}
+              <div
+                className={[
+                  ["mobile-display-only"],
+                  style["project-details"],
+                  [" grid-container"],
+                ].join(" ")}
+              >
+                <ul className="container max-w-2xl mx-auto col-span-full">
+                  <li>
+                    <h4>Role</h4>
+                    <p>{post.role}</p>
+                  </li>
+                  <li>
+                    <h4>Team</h4>
+                    <p>{post.team}</p>
+                  </li>
+                  <li>
+                    <h4>Website</h4>
+                    <p>{post.website}</p>
+                  </li>
+                </ul>
+              </div>
+
+              <SectionSeparator />
+              <section
+                id="wireframes"
+                className={[
+                  style["post-body-container"],
+                  style["slug-final-product"],
+                ].join(" ")}
+              >
+                <motion.div>
+                  <ImageHolder title={post.title} url={post.wireframe1.url} />
+                  <ImageHolder title={post.title} url={post.wireframe2.url} />
+                  <ImageHolder title={post.title} url={post.wireframe3.url} />
+                  <ImageHolder title={post.title} url={post.wireframe4.url} />
+                  <ImageHolder title={post.title} url={post.wireframe5.url} />
+                  <ImageHolder title={post.title} url={post.wireframe6.url} />
+                  <ImageHolder title={post.title} url={post.wireframe7.url} />
+                  <ImageHolder title={post.title} url={post.wireframe8.url} />
+                </motion.div>
+              </section>
+            </article>
+            ;
           </>
         )}
         <Footer />
