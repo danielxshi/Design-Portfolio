@@ -36,17 +36,17 @@ export default function Post({ post, morePosts, preview }) {
   return (
     <AnimatePresence>
       <Layout preview={preview}>
+        <InfoModal
+          content={post.content}
+          showModal={showModal}
+          setShowModal={setShowModal}
+          morePosts={morePosts}
+        />
         {/* <Header /> */}
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <InfoModal
-              content={post.content}
-              showModal={showModal}
-              setShowModal={setShowModal}
-              morePosts={morePosts}
-            />
             {showModal ? (
               <div className="hidden"></div>
             ) : (
@@ -176,10 +176,10 @@ export default function Post({ post, morePosts, preview }) {
                   ].join(" ")}
                 >
                   <motion.div
-                    // initial={{ opacity: 0, }}
-                    // animate={{ opacity: 1  }}
-                    // exit={{ opacity: 0 }}
-                    // transition={{ duration: 0.35, ease: "easeInOut" }}
+                  // initial={{ opacity: 0, }}
+                  // animate={{ opacity: 1  }}
+                  // exit={{ opacity: 0 }}
+                  // transition={{ duration: 0.35, ease: "easeInOut" }}
                   >
                     <ImageHolder title={post.title} url={post.wireframe1.url} />
                     <ImageHolder title={post.title} url={post.wireframe2.url} />
