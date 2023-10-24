@@ -39,12 +39,12 @@ export default function Post({ post, morePosts, preview }) {
         <PostTitle>Loading…</PostTitle>
       ) : (
         <>
-          <InfoModal
+          {/* <InfoModal
             content={post.content}
             showModal={showModal}
             setShowModal={setShowModal}
             morePosts={morePosts}
-          />
+          /> */}
           <article className={[style["article-container"]].join(" ")}>
             <Head>
               <title>{`${post.title} | DANIEL'S PORTFOLIO `}</title>
