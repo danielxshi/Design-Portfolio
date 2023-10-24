@@ -33,6 +33,8 @@ export default function Post({ post, morePosts, preview }) {
     setShowModal((prev) => !prev);
   };
 
+  // useEffect()
+
   return (
     <AnimatePresence>
       <Layout preview={preview}>
@@ -47,9 +49,10 @@ export default function Post({ post, morePosts, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            {showModal ? (
-              <div className="hidden"></div>
-            ) : (
+            {/* {showModal ? (
+              // <div className="hidden"></div>
+              null
+            ) : ( */}
               <article className={[style["article-container"]].join(" ")}>
                 <Head>
                   <title>{`${post.title} | DANIEL'S PORTFOLIO `}</title>
@@ -197,7 +200,7 @@ export default function Post({ post, morePosts, preview }) {
             )} */}
                 {/* // <MoreStories posts={morePosts} /> */}
               </article>
-            )}
+            {/* )} */}
           </>
         )}
         <Footer />
