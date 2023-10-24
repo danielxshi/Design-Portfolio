@@ -10,7 +10,6 @@ export default function Layout({ preview, children }) {
       <div className={`${(router.pathname === "/posts/[slug]" && "dark-mode")}`}>
         {console.log(router.pathname)}
         <main>{children}</main>
-        <Footer />
       </div>
     </>
   );

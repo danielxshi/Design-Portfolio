@@ -29,7 +29,7 @@ const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 15;
+  z-index: 99;
   height: -webkit-fit-content;
 `;
 
@@ -40,7 +40,7 @@ const ModalWrapper = styled.div`
   color: #fff;
   grid-template-columns: 1fr 1fr;
   position: relative;
-  z-index: 15;
+  z-index: 99;
   border-radius: 3px;
   overflow-y: scroll;
 `;
@@ -50,7 +50,7 @@ const CloseModalButton = styled(MdClose)`
   width: 32px;
   height: 32px;
   padding: 0;
-  z-index: 15;
+  z-index: 99;
 `;
 
 export const InfoModal = ({ showModal, setShowModal, content, morePosts }) => {
@@ -133,15 +133,17 @@ export const InfoModal = ({ showModal, setShowModal, content, morePosts }) => {
                   }}
                   animate={hidden ? "hidden" : "visible"}
                   transition={{ duration: 0.35, ease: "easeInOut" }}
+                  exit={{ opacity: 0 }}
                   className="grid-container items-center"
                 >
-                  <div className="col-span-1 col-start-1 back-button-container">
+                  <motion.div
+                    className="col-span-1 col-start-1 back-button-container"
+                  >
                     <CloseModalButton
                       aria-label="Close modal"
                       onClick={() => setShowModal((prev) => !prev)}
                     />
-                  </div>
-                  {/* <NextButton posts={morePosts.morePosts}/> */}
+                  </motion.div>
 
                   {morePosts && morePosts.length > 0 && (
                     <NextButton posts={morePosts} />
@@ -162,7 +164,7 @@ export const InfoModal = ({ showModal, setShowModal, content, morePosts }) => {
               >
                 <ModalWrapper ref={(el) => setElement(el)}>
                   <motion.div
-                    className="slug-animate-container"
+                    className="grid-container slug-animate-container"
                     animate={hidden ? "hidden" : "visible"}
                     variants={{
                       visible: { scale: 0.95 },

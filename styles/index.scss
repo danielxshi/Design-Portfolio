@@ -56,6 +56,26 @@ header {
   // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   // backdrop-filter: blur(500px);
   .back-button-container {
+    svg {
+      transition: .35s;
+      -webkit-transition: .35s;
+      -moz-transition: .35s;
+      -ms-transition: .35s;
+      -o-transition: .35s;
+    }
+
+    svg:hover {
+      transition: .35s;
+      -webkit-transition: .35s;
+      -moz-transition: .35s;
+      -ms-transition: .35s;
+      -o-transition: .35s;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
     a {
       font-size: 2rem;
     }
@@ -99,10 +119,10 @@ header {
 
   position: fixed;
   bottom: 50px;
-  right: $sm-margin;
+  right: 1rem;
 
-  width: $lrg-margin;
-  height: $lrg-margin;
+  width: $med-margin;
+  height: $med-margin;
 
   * {
     color: black !important;
@@ -128,6 +148,8 @@ header {
   max-height: -webkit-fill-available;
   background-image: url("../public/favicon/portfolio-bg-v2.png");
   background-position-y: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .landing-bg-gradient {
@@ -350,8 +372,8 @@ a {
   padding-top: 0;
 }
 
-.slug-animate-container{
-  transform: scale(.95);
+.slug-animate-container {
+  transform: scale(0.95);
 }
 
 // ------=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=

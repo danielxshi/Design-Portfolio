@@ -2,6 +2,7 @@ import Contact from "./contact";
 import ContentfulImage from "./contentful-image";
 import Image from "next/image";
 import profile from "../public/favicon/profile.png";
+// import resume from "../public/favicon/Daniel_Shi_Resume.pdf"
 
 export default function about() {
   return (
@@ -32,13 +33,12 @@ export default function about() {
       </div>
       <div className="cta-about flex">
         <div className="underscore-cta">
-          <a href="">resume</a>
+          <a target="_blank" href="https://drive.google.com/file/d/1gdwYVnoFCCOzyvDeLPGFNNIlgWYbCKX7/view?usp=share_link">resume</a>
         </div>
         <div className="underscore-cta ml-4">
-          <a href="">linkedin</a>
+          <a target="_blank" href="https://www.linkedin.com/in/daniel-xiang-shi/">linkedin</a>
         </div>
-
-        <span className="" href="">
+        <span>
           <strong>work collection ↴</strong>
         </span>
       </div>

@@ -10,7 +10,7 @@ export default function NextButton({ posts }) {
           style={{ backgroundColor: "tomato" }}
         ></div>
         {posts.map((post) => (
-          <Link href="">{post.title}</Link>
+          <Link href={post.slug}>{post.title}</Link>
         ))}
       </div>
     </div>

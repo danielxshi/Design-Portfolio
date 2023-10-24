@@ -4,6 +4,7 @@ import { getAllPostsForHome } from "../lib/api";
 import Head from "next/head";
 import Container from "../components/home-container";
 import Landing from "../components/landing";
+import Footer from "../components/footer";
 
 export default function Index({ preview, allPosts, posts }) {
   const morePosts = allPosts.slice(1);
@@ -17,6 +18,7 @@ export default function Index({ preview, allPosts, posts }) {
           <Landing />
           <MoreStories posts={allPosts} />
         </Container>
+        <Footer/>
       </Layout>
     </>
   );
