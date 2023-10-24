@@ -50,8 +50,8 @@ export default function Post({ post, morePosts, preview }) {
               <title>{`${post.title} | DANIEL'S PORTFOLIO `}</title>
               <meta property="og:image" content={post.coverImage.url} />
             </Head>
-            <SlugNav onClick={openModal} />
-            <ScrollTop />
+            {/* <SlugNav onClick={openModal} /> */}
+            {/* <ScrollTop /> */}
 
             {/* mobile */}
             <section
