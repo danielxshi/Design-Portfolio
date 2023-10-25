@@ -35,11 +35,6 @@ export const SlugNav = ({ showModal, setShowModal, content, morePosts }) => {
     [setShowModal, showModal]
   );
 
-  useEffect(() => {
-    document.addEventListener("keydown", keyPress);
-    return () => document.removeEventListener("keydown", keyPress);
-  }, [keyPress]);
-
   const [pos, setPos] = useState(0);
   const [element, setElement] = useState(null);
   const [hidden, setHidden] = useState(false);

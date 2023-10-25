@@ -84,29 +84,19 @@ export const InfoModal = ({ showModal, setShowModal, content, morePosts }) => {
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
-  // Scroll Ex 1
   const [hidden, setHidden] = useState(false);
-
   const [pos, setPos] = useState(0);
-
   const [element, setElement] = useState(null);
   useEventListener("scroll", (ev) => setPos(ev.target.scrollTop), element);
 
   useEffect(() => {
-    console.log(pos + "test");
-    // var posTest = 0;
     if (pos > 0) {
-      // console.log((ev) => setPos(ev.target.scrollTop) + "this should hide");
       setHidden(true);
     }
     if (pos <= 1) {
       console.log("yo");
       setHidden(false);
     }
-    // if (posTest < pos) {
-    //   setHidden(false);
-    // }
-    // posTest = pos;
   });
 
   return (
@@ -136,9 +126,7 @@ export const InfoModal = ({ showModal, setShowModal, content, morePosts }) => {
                   exit={{ opacity: 0 }}
                   className="grid-container items-center"
                 >
-                  <motion.div
-                    className="col-span-1 col-start-1 back-button-container"
-                  >
+                  <motion.div className="col-span-1 col-start-1 back-button-container">
                     <CloseModalButton
                       aria-label="Close modal"
                       onClick={() => setShowModal((prev) => !prev)}
