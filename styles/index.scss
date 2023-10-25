@@ -57,19 +57,19 @@ header {
   // backdrop-filter: blur(500px);
   .back-button-container {
     svg {
-      transition: .35s;
-      -webkit-transition: .35s;
-      -moz-transition: .35s;
-      -ms-transition: .35s;
-      -o-transition: .35s;
+      transition: 0.35s;
+      -webkit-transition: 0.35s;
+      -moz-transition: 0.35s;
+      -ms-transition: 0.35s;
+      -o-transition: 0.35s;
     }
 
     svg:hover {
-      transition: .35s;
-      -webkit-transition: .35s;
-      -moz-transition: .35s;
-      -ms-transition: .35s;
-      -o-transition: .35s;
+      transition: 0.35s;
+      -webkit-transition: 0.35s;
+      -moz-transition: 0.35s;
+      -ms-transition: 0.35s;
+      -o-transition: 0.35s;
       -webkit-transform: rotate(180deg);
       -moz-transform: rotate(180deg);
       -o-transform: rotate(180deg);
@@ -94,6 +94,11 @@ header {
     font-weight: 500 !important;
     gap: 10px;
   }
+}
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 .text-cta {
   display: flex;
@@ -374,6 +379,14 @@ a {
 
 .slug-animate-container {
   transform: scale(0.95);
+}
+
+.project-details-wrapper {
+  a {
+    font-style: light;
+    font-weight: 500;
+    font-size: $base-font !important;
+  }
 }
 
 // ------=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=

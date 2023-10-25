@@ -3,10 +3,8 @@ const FooterItems = [
     contact: {
       link: [
         {
-          text: "danielxshi@hotmail.com",
-        },
-        {
           text: "CV",
+          link: "https://drive.google.com/file/d/1gdwYVnoFCCOzyvDeLPGFNNIlgWYbCKX7/view"
         },
       ],
     },

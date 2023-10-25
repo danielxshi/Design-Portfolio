@@ -19,8 +19,11 @@ export const renderSwitch = (params) => {
           <ul>
             {test2.map((item, index) => (
               <>
-                <li key={index}>
-                  <Link href="">{item["text"]}</Link>
+                <li key={index} className="underscore-cta">
+                  <Link href="mailto: danielxshi@hotmail.com">danielxshi@hotmail.com</Link>
+                </li>
+                <li key={index} className="underscore-cta">
+                  <Link href={item["link"]}>{item["text"]}</Link>
                 </li>
               </>
             ))}

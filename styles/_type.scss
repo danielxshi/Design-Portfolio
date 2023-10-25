@@ -24,7 +24,7 @@ h2 {
   letter-spacing: -0.8px;
 }
 
-h3 { 
+h3 {
   font-size: $base-font;
 }
 
@@ -53,13 +53,13 @@ a {
   font-weight: 700;
   font-style: normal;
 }
+
 sup {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .footer-container {
   * {
-    
     font-size: $base-font !important;
   }
 }
@@ -102,8 +102,7 @@ em {
 }
 // end of footer
 
-@media (min-width: 375px){
-  
+@media (min-width: 375px) {
 }
 
 @media (min-width: 1280px) {
@@ -124,10 +123,8 @@ em {
   a {
     font-size: $base-font;
   }
-
 }
 
 // Largest Media Query
 @media (min-width: 1536px) {
- 
 }

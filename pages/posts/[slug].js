@@ -1,22 +1,23 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import ErrorPage from "next/error";
-import MoreStories from "../../components/more-stories";
 import Layout from "../../components/layout";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
 import style from "../../styles/modules/_slug.module.scss";
 import ImageHolder from "../../components/imageholder";
-import ContentfulHeaderImage from "../../components/Image/contentful-header-image";
 import SectionSeparator from "../../components/section-separator";
 import SlugNav from "../../components/Navigation/slug-nav";
 import ScrollTop from "../../components/Button/ScrollToTop";
-import { InfoModal } from "../../components/project-info-modal";
 import Footer from "../../components/footer";
-
-import React, { useState } from "react";
-import NextButton from "../../components/Button/NextButton";
+import { InfoModal } from "../../components/project-info-modal";
 import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
+import Link from "next/link";
+
+import NextButton from "../../components/Button/NextButton";
+import MoreStories from "../../components/more-stories";
+import ContentfulHeaderImage from "../../components/Image/contentful-header-image";
 
 // import SlugHeader from "./slug-header";
 
@@ -36,7 +37,6 @@ export default function Post({ post, morePosts, preview }) {
   return (
     <AnimatePresence>
       <Layout preview={preview}>
-        {/* <Header /> */}
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -47,16 +47,14 @@ export default function Post({ post, morePosts, preview }) {
               setShowModal={setShowModal}
               morePosts={morePosts}
             /> */}
-            {/* {showModal ? (
-              null
-            ) : ( */}
+            {/* {showModal ? null : ( */}
               <article className={[style["article-container"]].join(" ")}>
                 <Head>
                   <title>{`${post.title} | DANIEL'S PORTFOLIO `}</title>
                   <meta property="og:image" content={post.coverImage.url} />
                 </Head>
-                <SlugNav onClick={openModal} />
-                {/* <NextButton morePosts={morePosts}/> */}
+                <SlugNav  />
+
                 <ScrollTop />
 
                 {/* <SlugHeader
@@ -119,7 +117,7 @@ export default function Post({ post, morePosts, preview }) {
 
                   <div
                     className={[
-                      ["mt-auto mb-0 "],
+                      ["mt-auto mb-0  project-details-wrapper"],
                       style["project-details-desktop"],
                       style["project-details"],
                     ].join(" ")}
@@ -135,7 +133,7 @@ export default function Post({ post, morePosts, preview }) {
                       </li>
                       <li>
                         <h4>Website</h4>
-                        <p>{post.website}</p>
+                        <a rel="noopener noreferrer" target="_blank" href={post.website}>{post.website}</a>
                       </li>
                     </ul>
                   </div>
@@ -146,7 +144,7 @@ export default function Post({ post, morePosts, preview }) {
                 {/* Project Details */}
                 <div
                   className={[
-                    ["mobile-display-only"],
+                    ["mobile-display-only project-details-wrapper"],
                     style["project-details"],
                     [" grid-container"],
                   ].join(" ")}
@@ -162,7 +160,7 @@ export default function Post({ post, morePosts, preview }) {
                     </li>
                     <li>
                       <h4>Website</h4>
-                      <p>{post.website}</p>
+                      <a rel="noopener noreferrer" target="_blank" href={post.website}>{post.website}</a>
                     </li>
                   </ul>
                 </div>
@@ -176,10 +174,10 @@ export default function Post({ post, morePosts, preview }) {
                   ].join(" ")}
                 >
                   <motion.div
-                    // initial={{ opacity: 0, }}
-                    // animate={{ opacity: 1  }}
-                    // exit={{ opacity: 0 }}
-                    // transition={{ duration: 0.35, ease: "easeInOut" }}
+                  // initial={{ opacity: 0, }}
+                  // animate={{ opacity: 1  }}
+                  // exit={{ opacity: 0 }}
+                  // transition={{ duration: 0.35, ease: "easeInOut" }}
                   >
                     <ImageHolder title={post.title} url={post.wireframe1.url} />
                     <ImageHolder title={post.title} url={post.wireframe2.url} />
@@ -191,11 +189,6 @@ export default function Post({ post, morePosts, preview }) {
                     <ImageHolder title={post.title} url={post.wireframe8.url} />
                   </motion.div>
                 </section>
-                {/* {morePosts && morePosts.length > 0 && (
-              <NextButton posts={morePosts}/>
-
-            )} */}
-                {/* // <MoreStories posts={morePosts} /> */}
               </article>
             {/* )} */}
           </>

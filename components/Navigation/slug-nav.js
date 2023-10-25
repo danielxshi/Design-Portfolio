@@ -26,21 +26,21 @@ class SlugNav extends Component {
               <BackButton href="/" />
             </div>
 
-            <div className="col-end-9 flex text-cta-wrapper">
+            <div className="col-end-9 flex text-cta-wrapper prevent-select">
               <p className="mr-3">Read</p>
               <div className="text-cta">
                 <div
                   className="w-[1em] h-[1em] rounded-full"
                   style={{ backgroundColor: "tomato" }}
                 ></div>
-                <button
-                  onClick={() => {
-                    this.props.onClick();
-                    this.handleClick();
-                  }}
+                <p className="select-none	prevent-select"
+                  // onClick={() => {
+                  //   this.props.onClick();
+                  //   this.handleClick();
+                  // }}
                 >
-                  Project Information
-                </button>
+                  Coming Soon
+                </p>
               </div>
             </div>
           </motion.nav>
