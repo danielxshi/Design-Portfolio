@@ -3,7 +3,7 @@ import Link from "next/link";
 import Router from "next/router";
 import { MouseEvent } from "react";
 
-export default function SlugNav(props) {
+export default function SlugSideNav(props) {
   return (
     <nav className={[style["slug-nav"], ["container max-w-2xl mx-auto col-span-full"]].join(" ")}>
       <div className="">
