@@ -27,7 +27,7 @@ export default function Post({ post, morePosts, preview }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
     setShowModal((prev) => !prev);
@@ -41,15 +41,15 @@ export default function Post({ post, morePosts, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <InfoModal
+            {/* <InfoModal
               content={post.content}
               showModal={showModal}
               setShowModal={setShowModal}
               morePosts={morePosts}
-            />
-            {showModal ? (
-              <div className="hidden"></div>
-            ) : (
+            /> */}
+            {/* {showModal ? (
+              null
+            ) : ( */}
               <article className={[style["article-container"]].join(" ")}>
                 <Head>
                   <title>{`${post.title} | DANIEL'S PORTFOLIO `}</title>
@@ -197,7 +197,7 @@ export default function Post({ post, morePosts, preview }) {
             )} */}
                 {/* // <MoreStories posts={morePosts} /> */}
               </article>
-            )}
+            {/* )} */}
           </>
         )}
         <Footer />
