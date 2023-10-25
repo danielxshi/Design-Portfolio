@@ -140,12 +140,6 @@ export const InfoModal = ({ showModal, setShowModal, content, morePosts }) => {
               </header>
 
               <a.div
-                // variants={{
-                //   visible: { y: 0 },
-                //   hidden: { y: "-100%" },
-                // }}
-                // animate={hidden ? "hidden" : "visible"}
-                // transition={{ duration: 0.35, ease: "easeInOut" }}
 
                 className="slug-modal-wrapper"
                 style={animation}
