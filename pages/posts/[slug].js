@@ -27,7 +27,7 @@ export default function Post({ post, morePosts, preview }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  // const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
     setShowModal((prev) => !prev);
@@ -36,12 +36,12 @@ export default function Post({ post, morePosts, preview }) {
   return (
     <AnimatePresence>
       <Layout preview={preview}>
-        {/* <InfoModal
+        <InfoModal
           content={post.content}
           showModal={showModal}
           setShowModal={setShowModal}
           morePosts={morePosts}
-        /> */}
+        />
 
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
