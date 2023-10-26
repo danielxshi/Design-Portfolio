@@ -59,7 +59,7 @@
   .footer-container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    padding: $sm-margin $med-margin;
+    padding: $grid-container-padding;
 
     .footer-contact-container {
       grid-column-start: 1;

@@ -75,11 +75,11 @@ export default function Post({ post, morePosts, preview }) {
                   style["slug-header-mobile"],
                 ].join(" ")}
               >
-                {/* <ContentfulHeaderImage url={post.headerImage.url} /> */}
+                <ContentfulHeaderImage url={post.headerImage.url} />
 
                 <div className={[style["post-description"]].join(" ")}>
                   <h4 className="leading-none">
-                    website redesign | {post.title}{" "}
+                    {post.projectType} | {post.title}{" "}
                   </h4>
                   <p>-</p>
 
@@ -97,7 +97,7 @@ export default function Post({ post, morePosts, preview }) {
                   style["slug-header-desktop"],
                 ].join(" ")}
               >
-                {/* <ContentfulHeaderImage url={post.headerImage.url} /> */}
+                <ContentfulHeaderImage url={post.headerImage.url} />
 
                 <div
                   className={[
@@ -109,7 +109,7 @@ export default function Post({ post, morePosts, preview }) {
                 >
                   <div>
                     <h4 className="leading-none">
-                      Website Redesign | {post.title}
+                    {post.projectType} | {post.title}
                     </h4>
                     <p>-</p>
                   </div>

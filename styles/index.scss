@@ -462,8 +462,8 @@ a {
   }
 
   .home-container {
-    margin: $sm-margin auto;
-    padding: $container-padding;
+    // margin: $sm-margin auto;
+    padding: $grid-container-padding;
   }
   .home-container {
     display: grid;

@@ -19,24 +19,35 @@ export default function about() {
         </div>
         <div className="about-content-wrapper">
           <p className="mt-6">
-            <strong>First a little about me </strong>A leo eget eget pharetra a
-            adipiscing volutpat quisque. Egestas tortor sollicitudin sed urna
-            nibh aliquet. Nibh egestas vulputate dictum turpis fermentum,
+            <strong>Meet Daniel, </strong> a highly skilled multidisciplinary
+            UX/UI designer whose expertise extends across various facets of
+            design and development. With a robust background of seven years in{" "}
+            <strong>web design</strong>
           </p>
           <p className="mt-6">
-            Lorem ipsum dolor sit amet consectetur. A leo eget eget pharetra a
-            branding volutpat quisque. Egestas tortor sollicitudin sed urna nibh
-            aliquet. <strong>research</strong> egestas{" "}
-            <strong>accessibility</strong>
+            With a track record of delivering high-quality,{" "}
+            <strong>commercially successful</strong> solutions, Daniel stands as
+            a testament to the power of a multidisciplinary approach in the
+            ever-evolving realm of UX/UI design.
           </p>
         </div>
       </div>
       <div className="cta-about flex">
         <div className="underscore-cta">
-          <a target="_blank" href="https://drive.google.com/file/d/1gdwYVnoFCCOzyvDeLPGFNNIlgWYbCKX7/view?usp=share_link">resume</a>
+          <a
+            target="_blank"
+            href="https://drive.google.com/file/d/1gdwYVnoFCCOzyvDeLPGFNNIlgWYbCKX7/view?usp=share_link"
+          >
+            resume
+          </a>
         </div>
         <div className="underscore-cta ml-4">
-          <a target="_blank" href="https://www.linkedin.com/in/daniel-xiang-shi/">linkedin</a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/daniel-xiang-shi/"
+          >
+            linkedin
+          </a>
         </div>
         <span>
           <strong>work collection ↴</strong>
