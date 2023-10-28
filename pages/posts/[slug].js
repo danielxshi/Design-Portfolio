@@ -22,6 +22,11 @@ import ContentfulHeaderImage from "../../components/Image/contentful-header-imag
 // import SlugHeader from "./slug-header";
 
 export default function Post({ post, morePosts, preview }) {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
   const router = useRouter();
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
@@ -30,12 +35,6 @@ export default function Post({ post, morePosts, preview }) {
   if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />;
   }
-
-  const [showModal, setShowModal] = useState(false);
-
-  const openModal = () => {
-    setShowModal((prev) => !prev);
-  };
 
   return (
     <AnimatePresence>
@@ -56,7 +55,9 @@ export default function Post({ post, morePosts, preview }) {
                   <title>{`${post.title} | DANIEL'S PORTFOLIO `}</title>
                   <meta property="og:image" content={post.coverImage.url} />
                 </Head>
-                <SlugNav onClick={openModal}/>
+                <SlugNav
+                // onClick={openModal}
+                />
 
                 <ScrollTop />
 
