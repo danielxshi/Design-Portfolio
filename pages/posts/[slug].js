@@ -56,7 +56,7 @@ export default function Post({ post, morePosts, preview }) {
                   <meta property="og:image" content={post.coverImage.url} />
                 </Head>
                 <SlugNav
-                // onClick={openModal}
+                onClick={openModal}
                 />
 
                 <ScrollTop />
