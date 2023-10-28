@@ -16,7 +16,7 @@ class SlugNav extends Component {
       <AnimatePresence>
         <header>
           <motion.nav
-            initial={{  y: "-100%" }}
+            initial={{ y: "-100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
@@ -26,21 +26,22 @@ class SlugNav extends Component {
               <BackButton href="/" />
             </div>
 
-            <div className="col-end-9 flex text-cta-wrapper prevent-select">
+            <div className="col-end-9 flex text-cta-wrapper">
               <p className="mr-3">Read</p>
               <div className="text-cta">
                 <div
                   className="w-[1em] h-[1em] rounded-full"
                   style={{ backgroundColor: "tomato" }}
                 ></div>
-                <p className="select-none	prevent-select"
-                  // onClick={() => {
-                  //   this.props.onClick();
-                  //   this.handleClick();
-                  // }}
+                <button
+                  className=""
+                  onClick={() => {
+                    this.props.onClick();
+                    this.handleClick();
+                  }}
                 >
                   Coming Soon
-                </p>
+                </button>
               </div>
             </div>
           </motion.nav>

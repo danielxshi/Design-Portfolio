@@ -98,7 +98,7 @@ export default function Footer() {
       })}
 
       <div className="footer-feedback-container">
-        <Link href="">portfolio feedback?</Link>
+        {/* <Link href="">portfolio feedback?</Link> */}
         <div className="">
           <p>currently seeking work: </p>
           <div className="wrapper">
