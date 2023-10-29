@@ -4,6 +4,59 @@
   padding: $grid-container-padding;
 }
 
+.slug-header {
+  .slug-header-text {
+    h1 {
+      min-width: 12ch;
+    }
+    h4 {
+      margin-top: $sm-margin;
+    }
+    margin-top: 3rem;
+  }
+  .project-details-wrapper {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
+  .project-details,
+  .slug-header-text {
+    margin-bottom: $med-margin;
+  }
+  .slug-header-description p {
+    margin-bottom: $sm-margin;
+  }
+  .slug-header-description {
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    flex-wrap: wrap;
+    p {
+      width: 30ch;
+    }
+  }
+}
+
+.slug-header-grid {
+  display: grid;
+}
+
+.slug-post-description-desktop {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(8, 1fr);
+  height: fit-content;
+  margin-top: 6rem;
+}
+
+.post-description-desktop-container {
+  grid-column-start: 2;
+  grid-column-end: 7;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .slug-h2 {
   line-height: 1.2rem;
 }
@@ -23,36 +76,12 @@
 }
 
 .slug-header-desktop {
-  display: none;
+  // display: none;
   min-height: 70svh;
   padding-top: 6rem;
   * {
     z-index: 1;
   }
-}
-
-.slug-header-grid {
-  display: grid;
-}
-
-.post-description h1 {
-  width: 14ch;
-}
-
-.slug-post-description-desktop {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(8, 1fr);
-  height: fit-content;
-  margin-top: 6rem;
-}
-
-.post-description-desktop-container {
-  grid-column-start: 2;
-  grid-column-end: 7;
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
 }
 
 .slug-header {
@@ -101,13 +130,17 @@
   margin-top: $sm-margin;
   grid-column-start: 1;
   grid-column-end: -1;
-  // margin-top: $med-margin;
-  h4 {
-    margin-bottom: $xs-margin;
-    opacity: 0.7;
-  }
-  li {
-    margin-bottom: $sm-margin;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    h4 {
+      margin-bottom: $xs-margin;
+      opacity: 0.7;
+    }
+    li {
+      margin-bottom: $sm-margin;
+      margin-right: $med-margin;
+    }
   }
 }
 
@@ -116,9 +149,6 @@
   img {
     width: -webkit-fill-available;
   }
-}
-.project-details-desktop {
-  display: none;
 }
 
 // slug nav
@@ -151,15 +181,13 @@
     display: grid;
   }
 
-  .project-details-mobile {
-    display: none;
-  }
   .post-description-desktop-container,
   .project-details-desktop {
     max-width: 42rem;
     width: -webkit-fill-available;
     margin: auto;
   }
+
   .project-details-desktop {
     display: grid;
     ul {
@@ -170,6 +198,62 @@
 }
 
 @media (min-width: 768px) {
+  .project-details {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-column-end: -1;
+    margin-bottom: 0;
+    margin-top: auto;
+    ul {
+      flex-direction: row-reverse;
+      li:first-child {
+        margin-right: 0 !important;
+      }
+    }
+  }
+  .slug-header {
+    h1,
+    .post-description {
+      grid-column-start: 1;
+      grid-column-end: 7;
+    }
+    .slug-header-text {
+      h1 {
+        min-width: 12ch;
+      }
+      h4 {
+        margin-top: $sm-margin;
+      }
+      margin-top: 3rem;
+    }
+    .project-details-wrapper {
+      margin-top: auto;
+      margin-bottom: 0;
+    }
+
+    .project-details,
+    .slug-header-text {
+      margin-bottom: $med-margin;
+    }
+    .slug-header-description p {
+      margin-bottom: $sm-margin;
+    }
+    .slug-header-description {
+      display: flex;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      * {
+        margin: 0;
+        height: fit-content;
+      }
+      flex-wrap: wrap;
+      p {
+        width: 35ch;
+        margin-right: $med-margin;
+      }
+    }
+  }
+
   .post-body-container {
     h2 {
       padding-bottom: $sm-margin;
@@ -229,18 +313,6 @@
   .slug-header-desktop {
     display: grid;
   }
-
-  .post-description h1 {
-    width: 20ch;
-  }
-  //   .project-details {
-  //     display: flex;
-  //     grid-column-start: 1;
-  //     grid-column-end: 6;
-  //     ul {
-  //         display: flex;
-  //     }
-  //   }
 }
 
 @media (min-width: 1280px) {
@@ -249,11 +321,6 @@
       grid-column-start: 1;
       grid-column-end: 1;
       font-size: 2rem;
-    }
-    h1,
-    .post-description {
-      grid-column-start: 2;
-      grid-column-end: 7;
     }
     .project-overview {
       grid-column-start: 3;
@@ -264,7 +331,6 @@
     }
     .project-details {
       padding: 0;
-      grid-column-start: 8;
     }
     .project-overview {
       margin-top: $med-margin;

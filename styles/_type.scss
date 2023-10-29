@@ -2,11 +2,11 @@
 
 // This font library is based off of the golden ratio
 
-$sm-font: 0.9rem; // footer ?? |  base ÷ 1.6 | smaller than base
+$sm-font: 0.9rem; // footer ?? |  base ÷ 1.65 | smaller than base
 $base-font: 1.2rem; // p | 17px
-$med-font: $base-font * 1.6; // h3 | base * 1.6
-$lrg-font: $base-font * (1.6 * 1.6); // h2 | h3 * 1.6
-$xl-font: $base-font * (1.6 * 1.6 * 1.6); // h1 | h2 * 1.6
+$med-font: $base-font * 1.65; // h3 | base * 1.65
+$lrg-font: $base-font * (1.65 * 1.65); // h2 | h3 * 1.65
+$xl-font: $base-font * (1.65 * 1.65 * 1.65); // h1 | h2 * 1.65
 
 h1 {
   font-family: Gestura Headline TRIAL;
@@ -106,11 +106,11 @@ em {
 }
 
 @media (min-width: 1280px) {
-  $sm-font: 1.1rem; // footer ?? |  base ÷ 1.6 | smaller than base
+  $sm-font: 1.1rem; // footer ?? |  base ÷ 1.65 | smaller than base
   $base-font: 1.3rem; // p | 17px
-  $med-font: $base-font * 1.6; // h3 | base * 1.6
-  $lrg-font: $base-font * (1.6 * 1.6); // h2 | h3 * 1.6
-  $xl-font: $base-font * (1.6 * 1.6 * 1.6); // h1 | h2 * 1.6
+  $med-font: $base-font * 1.65; // h3 | base * 1.65
+  $lrg-font: $base-font * (1.65 * 1.65); // h2 | h3 * 1.65
+  $xl-font: $base-font * (1.65 * 1.65 * 1.65); // h1 | h2 * 1.65
   h1 {
     font-size: $xl-font;
   }

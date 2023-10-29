@@ -21,6 +21,7 @@
     "react-icons": "^4.11.0",
     "react-pdf": "^7.5.1",
     "react-router": "^6.15.0",
+    "react-router-dom": "^6.17.0",
     "react-spring": "^9.7.3",
     "sass": "^1.68.0",
     "styled-components": "^6.1.0"

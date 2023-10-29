@@ -1,3 +1,3 @@
 export default function SectionSeparator() {
-  return <div className="pt-28 pb-2" />
+  return <div className="pt-10 pb-2" />
 }

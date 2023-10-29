@@ -133,9 +133,9 @@ export const InfoModal = ({ showModal, setShowModal, content, morePosts }) => {
                     />
                   </motion.div>
 
-                  {morePosts && morePosts.length > 0 && (
-                    <NextButton posts={morePosts} />
-                  )}
+                  {/* {morePosts && morePosts.length > 0 && (
+                    <NextButton onClick={() => setShowModal(false)} posts={morePosts} />
+                  )} */}
                 </motion.nav>
               </header>
 

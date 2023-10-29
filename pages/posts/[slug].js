@@ -12,14 +12,14 @@ import ScrollTop from "../../components/Button/ScrollToTop";
 import Footer from "../../components/footer";
 import { InfoModal } from "../../components/project-info-modal";
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useState } from "react";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
+import SlugHeader from "../../components/slug-header";
+import Link from "next/link";
 import NextButton from "../../components/Button/NextButton";
 import MoreStories from "../../components/more-stories";
-import ContentfulHeaderImage from "../../components/Image/contentful-header-image";
 
-// import SlugHeader from "./slug-header";
+import ContentfulHeaderImage from "../../components/Image/contentful-header-image";
 
 export default function Post({ post, morePosts, preview }) {
   const [showModal, setShowModal] = useState(false);
@@ -27,6 +27,7 @@ export default function Post({ post, morePosts, preview }) {
   const openModal = () => {
     setShowModal((prev) => !prev);
   };
+
   const router = useRouter();
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
@@ -52,150 +53,27 @@ export default function Post({ post, morePosts, preview }) {
             {showModal ? null : (
               <article className={[style["article-container"]].join(" ")}>
                 <Head>
-                  <title>{`${post.title} | DANIEL'S PORTFOLIO `}</title>
-                  <meta property="og:image" content={post.coverImage.url} />
+                  <title>{`${post.title} | Daniel Shi `}</title>
+                  {/* <meta property="og:image" content={post.coverImage.url} /> */}
                 </Head>
-                <SlugNav
-                onClick={openModal}
-                />
-
+                <SlugNav onClick={openModal} />
                 <ScrollTop />
 
-                {/* <SlugHeader
+                <SlugHeader
+                  client={post.title}
+                  projectType={post.projectType}
                   details={post.role}
                   title={post.projectDescription}
-                  description={
+                  projectRole={
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci impedit, eius vel minus magnam labore veniam, rem excepturi temporibus aliquam, nesciunt ratione soluta? Earum dolores officia eaque eveniet, assumenda nemo."
                   }
-                /> */}
-                {/* mobile */}
-                <section
-                  className={[
-                    ["grid-container mobile-display-only relative"],
-                    style["slug-header"],
-                    style["slug-header-mobile"],
-                  ].join(" ")}
-                >
-                  <ContentfulHeaderImage url={post.headerImage.url} />
-
-                  <div className={[style["post-description"]].join(" ")}>
-                    <h4 className="leading-none">
-                      {post.projectType} | {post.title}{" "}
-                    </h4>
-                    <p>-</p>
-
-                    <h1 className={style["post-description"]}>
-                      {post.projectDescription}
-                    </h1>
-                  </div>
-                </section>
-
-                {/* deesktop */}
-                <section
-                  className={[
-                    ["grid-container relative"],
-                    style["slug-header"],
-                    style["slug-header-desktop"],
-                  ].join(" ")}
-                >
-                  <ContentfulHeaderImage url={post.headerImage.url} />
-
-                  <div
-                    className={[
-                      ["mt-auto"],
-                      style["post-description"],
-                      style["slug-header-grid"],
-                      style["post-description-desktop-container"],
-                    ].join(" ")}
-                  >
-                    <div>
-                      <h4 className="leading-none">
-                        {post.projectType} | {post.title}
-                      </h4>
-                      <p>-</p>
-                    </div>
-                    <h1 className={style["post-description"]}>
-                      {post.projectDescription}
-                    </h1>
-                  </div>
-
-                  <div
-                    className={[
-                      ["mt-auto mb-0  project-details-wrapper"],
-                      style["project-details-desktop"],
-                      style["project-details"],
-                    ].join(" ")}
-                  >
-                    <ul>
-                      <li>
-                        <h4>Role</h4>
-                        <p>{post.role}</p>
-                      </li>
-                      <li>
-                        <h4>Team</h4>
-                        <p>{post.team}</p>
-                      </li>
-                      <li>
-                        <h4>Website</h4>
-                        <div className="underscore-cta">
-                          <a
-                            onClick={() =>
-                              window.open(
-                                post.website.startsWith("http://") ||
-                                  post.website.startsWith("https://")
-                                  ? item.url
-                                  : "http://" + post.website,
-                                "_blank"
-                              )
-                            }
-                          >
-                            {post.website}
-                          </a>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </section>
-
-                {/* Project Header */}
-
-                {/* Project Details */}
-                <div
-                  className={[
-                    ["mobile-display-only project-details-wrapper"],
-                    style["project-details"],
-                    [" grid-container"],
-                  ].join(" ")}
-                >
-                  <ul className="container max-w-2xl mx-auto col-span-full">
-                    <li>
-                      <h4>Role</h4>
-                      <p>{post.role}</p>
-                    </li>
-                    <li>
-                      <h4>Team</h4>
-                      <p>{post.team}</p>
-                    </li>
-                    <li>
-                      <h4>Website</h4>
-                      <div className="underscore-cta">
-                        <a
-                          onClick={() =>
-                            window.open(
-                              post.website.startsWith("http://") ||
-                                post.website.startsWith("https://")
-                                ? item.url
-                                : "http://" + post.website,
-                              "_blank"
-                            )
-                          }
-                        >
-                          {post.website}
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                  projectTask={
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci impedit, eius vel minus magnam labore veniam, rem excepturi temporibus aliquam, nesciunt ratione soluta? Earum dolores officia eaque eveniet, assumenda nemo."
+                  }
+                  role={post.role}
+                  team={post.team}
+                  website={post.website}
+                />
 
                 <SectionSeparator />
                 <section
@@ -205,12 +83,7 @@ export default function Post({ post, morePosts, preview }) {
                     style["slug-final-product"],
                   ].join(" ")}
                 >
-                  <motion.div
-                  // initial={{ opacity: 0, }}
-                  // animate={{ opacity: 1  }}
-                  // exit={{ opacity: 0 }}
-                  // transition={{ duration: 0.35, ease: "easeInOut" }}
-                  >
+                  <motion.div>
                     <ImageHolder title={post.title} url={post.wireframe1.url} />
                     <ImageHolder title={post.title} url={post.wireframe2.url} />
                     <ImageHolder title={post.title} url={post.wireframe3.url} />
