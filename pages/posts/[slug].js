@@ -64,12 +64,8 @@ export default function Post({ post, morePosts, preview }) {
                   projectType={post.projectType}
                   details={post.role}
                   title={post.projectDescription}
-                  projectRole={
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci impedit, eius vel minus magnam labore veniam, rem excepturi temporibus aliquam, nesciunt ratione soluta? Earum dolores officia eaque eveniet, assumenda nemo."
-                  }
-                  projectTask={
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci impedit, eius vel minus magnam labore veniam, rem excepturi temporibus aliquam, nesciunt ratione soluta? Earum dolores officia eaque eveniet, assumenda nemo."
-                  }
+                  projectRole={post.task}
+                  projectTask={post.solution}
                   role={post.role}
                   team={post.team}
                   website={post.website}
