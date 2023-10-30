@@ -1,17 +1,22 @@
 @import "_variables.scss";
 
-.intro-container{
+.intro-container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  column-gap: 2rem
+  column-gap: 2rem;
 }
-
 
 .grid-container {
   display: grid;
   padding: $grid-container-padding;
   grid-template-columns: repeat(8, 1fr);
   column-gap: 2rem;
+}
+
+@media (min-width: 1280px) {
+  .grid-container, .footer-container {
+    padding: $sm-margin $med-margin;
+  }
 }
 
 // @media (min-width: 1024px) {

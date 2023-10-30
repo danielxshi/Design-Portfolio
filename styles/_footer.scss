@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 .footer-container {
-  padding: 1rem 1rem;
   display: flex;
   flex-wrap: wrap;
+  padding: $grid-container-padding;
   .list-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -59,7 +59,7 @@
   .footer-container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    padding: $grid-container-padding;
+    padding: $sm-margin $med-margin;
 
     .footer-contact-container {
       grid-column-start: 1;
