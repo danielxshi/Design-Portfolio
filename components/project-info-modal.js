@@ -95,7 +95,6 @@ export const InfoModal = ({ showModal, setShowModal, content, morePosts }) => {
       setHidden(true);
     }
     if (pos <= 1) {
-      console.log("yo");
       setHidden(false);
     }
   });

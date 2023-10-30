@@ -94,7 +94,22 @@ header {
   justify-content: right;
   align-items: center;
 }
+
+.text-cta:hover {
+  cursor: pointer;
+  background: rgb(70, 70, 70);
+  transition: 0.3s;
+  .rounded-full {
+    background: rgba(140, 225, 140, 0.693) !important;
+  }
+}
+
 .text-cta-wrapper {
+  .text-cta {
+    transition-timing-function: cubic-bezier(0.2, -2, 0.8, 2);
+  }
+  cursor: pointer !important;
+
   grid-column-start: 3;
   display: flex;
   * {
@@ -125,10 +140,14 @@ header {
   align-items: center;
   justify-content: center;
 }
-
+.scroll-to-top:hover {
+  background: rgba(140, 225, 140, 0.693) !important;
+  transition: 0.3s;
+}
 .scroll-to-top {
   @include display-flex;
 
+  transition-timing-function: cubic-bezier(0.2, -2, 0.8, 2);
   position: fixed;
   bottom: 50px;
   right: 1rem;
