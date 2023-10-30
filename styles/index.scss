@@ -43,6 +43,13 @@ body {
   }
 }
 
+.intro-container {
+  h1 {
+    font-size: $base-font;
+    margin-bottom: $lrg-margin;
+  }
+}
+
 // Navbar
 
 header {
@@ -244,8 +251,8 @@ a {
 }
 
 .landing-container {
-  min-height: fit-content;
-  height: 100svh;
+  min-height: 100svh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -406,6 +413,12 @@ a {
   }
 }
 @media (min-width: 768px) {
+  .intro-container {
+    h1 {
+      width: 17ch;
+      font-size: $xl-font;
+    }
+  }
   .text-cta-wrapper {
     grid-column-start: 3;
   }

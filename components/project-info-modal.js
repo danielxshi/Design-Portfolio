@@ -20,6 +20,7 @@ import {
   useMotionValueEvent,
   AnimatePresence,
 } from "framer-motion";
+import SectionSeparator from "./section-separator";
 
 const Background = styled.div`
   width: 100vw;
@@ -138,7 +139,6 @@ export const InfoModal = ({ showModal, setShowModal, content, morePosts }) => {
                   )} */}
                 </motion.nav>
               </header>
-
               <a.div className="slug-modal-wrapper" style={animation}>
                 <ModalWrapper ref={(el) => setElement(el)}>
                   <motion.div

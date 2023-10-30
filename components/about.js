@@ -15,7 +15,7 @@ export default function about() {
             alt={`Profile image`}
             src={profile}
           />
-          <p className="display-lead">DANIEL SHI | VISUAL DESIGN PORTFOLIO </p>
+          <p className="display-lead"> VISUAL DESIGN PORTFOLIO | 2023 </p>
         </div>
         <div className="about-content-wrapper">
           <p className="mt-6">
@@ -50,7 +50,7 @@ export default function about() {
           </a>
         </div>
         <span>
-          <strong>work collection ↴</strong>
+          <strong>selected work ↴</strong>
         </span>
       </div>
     </div>
