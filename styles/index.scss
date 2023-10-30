@@ -360,6 +360,9 @@ a {
   h1 {
     width: 12ch;
   }
+  div {
+    width: calc(100vw - 2rem);
+  }
 }
 
 // About

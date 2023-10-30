@@ -16,8 +16,8 @@ const styling = {
 export default function Landing() {
   return (
     <div className="landing-container">
-      <div className="grid-container desktop-display-only" style={styling}>
-        <div className="col-start-5 landing-bg desktop-display-only " style={styling}>
+      <div className="grid-container " style={styling}>
+        <div className="col-start-5 landing-bg  " style={styling}>
           {/* <ContentfulImage
             src={bg}
             layout="cover"

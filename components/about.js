@@ -8,7 +8,7 @@ export default function about() {
   return (
     <div className="about-container mt-auto mb-0">
       <div className="about-biography">
-        <div className="flex about-header-wrapper">
+        {/* <div className="flex about-header-wrapper">
           <ContentfulImage
             width={36}
             height={36}
@@ -16,7 +16,7 @@ export default function about() {
             src={profile}
           />
           <p className="display-lead"> VISUAL DESIGN PORTFOLIO | 2023 </p>
-        </div>
+        </div> */}
         <div className="about-content-wrapper">
           <p className="mt-6">
             <strong>Meet Daniel, </strong> a highly skilled multidisciplinary
