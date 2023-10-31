@@ -25,7 +25,7 @@ export default function about() {
             <strong>web design</strong>
           </p>
           <p className="mt-6">
-            With a track record of delivering high-quality,{" "}
+            Developing a track record of high-quality,{" "}
             <strong>commercially successful</strong> solutions, Daniel stands as
             a testament to the power of a multidisciplinary approach in the
             ever-evolving realm of UX/UI design.
