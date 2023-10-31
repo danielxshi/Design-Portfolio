@@ -79,16 +79,14 @@ export default function Post({ post, morePosts, preview }) {
                     style["slug-final-product"],
                   ].join(" ")}
                 >
-                  <motion.div>
-                    <ImageHolder title={post.title} url={post.wireframe1.url} />
-                    <ImageHolder title={post.title} url={post.wireframe2.url} />
-                    <ImageHolder title={post.title} url={post.wireframe3.url} />
-                    <ImageHolder title={post.title} url={post.wireframe4.url} />
-                    <ImageHolder title={post.title} url={post.wireframe5.url} />
-                    <ImageHolder title={post.title} url={post.wireframe6.url} />
-                    <ImageHolder title={post.title} url={post.wireframe7.url} />
-                    <ImageHolder title={post.title} url={post.wireframe8.url} />
-                  </motion.div>
+                  <ImageHolder title={post.title} url={post.wireframe1.url} />
+                  <ImageHolder title={post.title} url={post.wireframe2.url} />
+                  <ImageHolder title={post.title} url={post.wireframe3.url} />
+                  <ImageHolder title={post.title} url={post.wireframe4.url} />
+                  <ImageHolder title={post.title} url={post.wireframe5.url} />
+                  <ImageHolder title={post.title} url={post.wireframe6.url} />
+                  <ImageHolder title={post.title} url={post.wireframe7.url} />
+                  <ImageHolder title={post.title} url={post.wireframe8.url} />
                 </section>
               </article>
             )}

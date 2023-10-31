@@ -468,6 +468,9 @@ a {
   //padding and margin
 }
 @media (min-width: 1280px) {
+  .scroll-to-top {
+    right: $med-margin;
+  }
   .landing-container {
     min-width: fit-content;
   }
