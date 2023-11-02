@@ -6,7 +6,7 @@ export default function Intro() {
     <section className="intro-container">
       <div>
         <h1>
-          THE HUB FOR MY CASE STUDIES
+          THE HUB FOR MY CASE STUDIES.
         </h1>
       </div>
     </section>
