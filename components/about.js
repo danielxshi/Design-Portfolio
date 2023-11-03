@@ -19,16 +19,10 @@ export default function about() {
         </div> */}
         <div className="about-content-wrapper">
           <p className="mt-6">
-            <strong>Meet Daniel, </strong> a highly skilled multidisciplinary
-            UX/UI designer whose expertise extends across various facets of
-            design and development. With a robust background of seven years in{" "}
-            <strong>web design</strong>
+          <strong>Meet Daniel</strong>, a highly skilled <strong>multidisciplinary</strong> visual designer who has crafted over 65 websites. Committed to staying up-to-date on the latest technologies in design and development, 
           </p>
           <p className="mt-6">
-            Developing a track record of high-quality,{" "}
-            <strong>commercially successful</strong> solutions, Daniel stands as
-            a testament to the power of a multidisciplinary approach in the
-            ever-evolving realm of UX/UI design.
+          I've held notable <strong>management positions</strong> in art direction, graphic design and web design. In these roles, I led teams ranging from 5 to 10 individuals, overseeing the creation and direction of visually compelling designs. This managerial experience complements my technical expertise, contributing to a holistic skill set in both web development and team leadership.
           </p>
         </div>
       </div>
