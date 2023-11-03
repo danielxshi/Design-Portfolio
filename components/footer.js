@@ -7,7 +7,7 @@ export const renderSwitch = (params) => {
   //   }
   const keys = Object.keys(params);
   const value = keys;
-  console.log("params" + params[0]);
+  // console.log("params" + params[0]);
   const test = params[value];
   const test2 = test["link"];
 
