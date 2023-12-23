@@ -27,6 +27,11 @@ const FooterItems = [
     experience: {
       link: [
         {
+          company: "A-LAB Creative Agency",
+          position: "Senior UXUI Designer",
+          date: "2023-present"
+        },
+        {
           company: "005F Agency",
           position: "Visual Designer",
           date: "2021-2023"
